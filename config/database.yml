@@ -1,0 +1,18 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: gather
+  pool: 5
+
+development:
+  <<: *default
+  database: gather_development
+
+test:
+  <<: *default
+  database: gather_test
+
+production:
+  <<: *default
+  database: 
