@@ -12,5 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui-1.10.4.custom.min
+//= require jquery.easing.min
+//= require bootstrap.min
+//= require smoothscroll
+//= require jquery.validate.min
+//= require icheck.min
+//= require jquery.placeholder
+//= require jquery.stellar.min
+//= require jquery.touchSwipe.min
+//= require jquery.shuffle.min
+//= require lightGallery.min
+//= require owl.carousel.min
+//= require masterslider.min
+//= require scripts
 // require turbolinks
 //= require_tree .
