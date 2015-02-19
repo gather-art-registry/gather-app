@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
@@ -55,3 +54,5 @@ group :test, :development do
   gem "guard", ">=2.1.0"
   gem "guard-rspec"
 end
+
+ruby '2.2.0'
