@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require styles
- *= require color-scheme4
+ *= require color-scheme6
  *= require_tree .
  *= require_self
  */

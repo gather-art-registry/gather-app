@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'pages/about'
 
-  get 'pages/terms_of_us'
+  get 'pages/terms_of_service'
 
   get 'pages/privacy_policy'
 
