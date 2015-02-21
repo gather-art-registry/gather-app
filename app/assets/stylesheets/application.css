@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require font-awesome
+ *= require bootstrap.min
  *= require styles
  *= require color-default
  *= require_tree .

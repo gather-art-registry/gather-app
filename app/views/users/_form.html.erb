@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, html: {class: "form-horizontal"}) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,59 +11,89 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+  <div class="form-group">
+    <%= f.label :first_name, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :first_name, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+  <div class="form-group">
+    <%= f.label :last_name, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :last_name, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :first_name_2 %><br>
-    <%= f.text_field :first_name_2 %>
+  <div class="form-group">
+    <%= f.label :first_name_2, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :first_name_2, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :last_name_2 %><br>
-    <%= f.text_field :last_name_2 %>
+  <div class="form-group">
+    <%= f.label :last_name_2, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :last_name_2, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
+  <div class="form-group">
+    <%= f.label :username, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :username, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :email, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :email_2 %><br>
-    <%= f.text_field :email_2 %>
+  <div class="form-group">
+    <%= f.label :email_2, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :email_2, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+  <div class="form-group">
+    <%= f.label :phone, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :phone, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :phone_2 %><br>
-    <%= f.text_field :phone_2 %>
+  <div class="form-group">
+    <%= f.label :phone_2, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :phone_2, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+  <div class="form-group">
+    <%= f.label :address, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :address, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
+  <div class="form-group">
+    <%= f.label :city, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :city, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
+  <div class="form-group">
+    <%= f.label :state, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :state, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :zip %><br>
-    <%= f.text_field :zip %>
+  <div class="form-group">
+    <%= f.label :zip, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :zip, class: "form-control" %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :submit, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.submit class: "btn btn-primary btn-block" %>
+    </div>
   </div>
 <% end %>
+
