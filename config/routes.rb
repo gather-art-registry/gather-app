@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  resources :items
+
+  resources :media
+
+  resources :registries
+
   devise_for :users
   resources :users
 

@@ -11,10 +11,96 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221013912) do
+ActiveRecord::Schema.define(version: 20150221221530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "delivery_timings", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "item_availabilities", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "name"
+    t.integer  "artist_id"
+    t.text     "description"
+    t.string   "price"
+    t.integer  "item_availability_id"
+    t.integer  "quantity"
+    t.boolean  "special_order"
+    t.string   "turn_around_time"
+    t.integer  "production_category_id"
+    t.integer  "delivery_timing_id"
+    t.integer  "shipping_instruction_id"
+    t.text     "notes"
+    t.string   "image_1"
+    t.string   "image_2"
+    t.string   "image_3"
+    t.string   "image_4"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["artist_id"], name: "index_items_on_artist_id", using: :btree
+  add_index "items", ["delivery_timing_id"], name: "index_items_on_delivery_timing_id", using: :btree
+  add_index "items", ["item_availability_id"], name: "index_items_on_item_availability_id", using: :btree
+  add_index "items", ["production_category_id"], name: "index_items_on_production_category_id", using: :btree
+  add_index "items", ["shipping_instruction_id"], name: "index_items_on_shipping_instruction_id", using: :btree
+
+  create_table "media", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "production_categories", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "registries", force: true do |t|
+    t.string   "type_of_event"
+    t.string   "image"
+    t.date     "event_date"
+    t.date     "registry_close_date"
+    t.text     "story"
+    t.string   "event_website"
+    t.text     "delivery_instructions"
+    t.text     "notes"
+    t.boolean  "publish"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "registries", ["user_id"], name: "index_registries_on_user_id", using: :btree
+
+  create_table "shipping_instructions", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type of event:</strong>
+  <%= @registry.type_of_event %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @registry.event_date %>
+</p>
+
+<p>
+  <strong>Registry close date:</strong>
+  <%= @registry.registry_close_date %>
+</p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @registry.story %>
+</p>
+
+<p>
+  <strong>Event website:</strong>
+  <%= @registry.event_website %>
+</p>
+
+<p>
+  <strong>Delivery instructions:</strong>
+  <%= @registry.delivery_instructions %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @registry.notes %>
+</p>
+
+<p>
+  <strong>Publish:</strong>
+  <%= @registry.publish %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @registry.user %>
+</p>
+
+<%= link_to 'Edit', edit_registry_path(@registry) %> |
+<%= link_to 'Back', registries_path %>

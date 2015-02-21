@@ -1,0 +1,47 @@
+<h1>Listing items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Artist</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Item availability</th>
+      <th>Quantity</th>
+      <th>Special order</th>
+      <th>Turn around time</th>
+      <th>Production category</th>
+      <th>Delivery timing</th>
+      <th>Shipping instruction</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.artist %></td>
+        <td><%= item.description %></td>
+        <td><%= item.price %></td>
+        <td><%= item.item_availability %></td>
+        <td><%= item.quantity %></td>
+        <td><%= item.special_order %></td>
+        <td><%= item.turn_around_time %></td>
+        <td><%= item.production_category %></td>
+        <td><%= item.delivery_timing %></td>
+        <td><%= item.shipping_instruction %></td>
+        <td><%= item.notes %></td>
+        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_item_path %>

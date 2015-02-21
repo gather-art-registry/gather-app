@@ -1,0 +1,65 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :artist_id %><br>
+    <%= f.text_field :artist_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :item_availability_id %><br>
+    <%= f.text_field :item_availability_id %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :special_order %><br>
+    <%= f.check_box :special_order %>
+  </div>
+  <div class="field">
+    <%= f.label :turn_around_time %><br>
+    <%= f.text_field :turn_around_time %>
+  </div>
+  <div class="field">
+    <%= f.label :production_category_id %><br>
+    <%= f.text_field :production_category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_timing_id %><br>
+    <%= f.text_field :delivery_timing_id %>
+  </div>
+  <div class="field">
+    <%= f.label :shipping_instruction_id %><br>
+    <%= f.text_field :shipping_instruction_id %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

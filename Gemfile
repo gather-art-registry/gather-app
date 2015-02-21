@@ -15,6 +15,8 @@ gem 'therubyracer',  platforms: :ruby
 gem 'devise'
 gem "font-awesome-rails"
 gem 'puma'
+gem "rmagick"
+gem "carrierwave"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,0 +1,5 @@
+class Registry < ActiveRecord::Base
+  belongs_to :user
+  mount_uploader :image, ImageUploader
+  has_many :items
+end
