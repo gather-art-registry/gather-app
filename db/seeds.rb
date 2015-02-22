@@ -33,7 +33,7 @@ categories = Category.create([{ name: 'For the Wall', description: 'For the Wall
 item_availabilities = ItemAvailability.create([{ name: 'Available', description: 'Available' },
 	{ name: 'On Hold', description: 'On Hold' },
 	{ name: 'Sold Out', description: 'Sold Out' },
-	{ name: 'Coming Soon'  description: 'Coming Soon' }])
+	{ name: 'Coming Soon',  description: 'Coming Soon' }])
 
 delivery_timings = DeliveryTiming.create([{ name: 'Delivered as Purchased', description: 'Delivered as Purchased' },
 	{ name: 'Delivered when Individual Item Completed', description: 'Delivered when Individual Item Completed' },

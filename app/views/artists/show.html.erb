@@ -1,0 +1,94 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primary identifier:</strong>
+  <%= @artist.primary_identifier %>
+</p>
+
+<p>
+  <strong>Secondary identifier:</strong>
+  <%= @artist.secondary_identifier %>
+</p>
+
+<p>
+  <strong>Artist statement:</strong>
+  <%= @artist.artist_statement %>
+</p>
+
+<p>
+  <strong>Artist bio:</strong>
+  <%= @artist.artist_bio %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @artist.image %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @artist.website %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @artist.twitter %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @artist.facebook %>
+</p>
+
+<p>
+  <strong>Studio address:</strong>
+  <%= @artist.studio_address %>
+</p>
+
+<p>
+  <strong>Studio city:</strong>
+  <%= @artist.studio_city %>
+</p>
+
+<p>
+  <strong>Studio state:</strong>
+  <%= @artist.studio_state %>
+</p>
+
+<p>
+  <strong>Studio zip:</strong>
+  <%= @artist.studio_zip %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @artist.active %>
+</p>
+
+<p>
+  <strong>Studio pickup:</strong>
+  <%= @artist.studio_pickup %>
+</p>
+
+<p>
+  <strong>Local delivery:</strong>
+  <%= @artist.local_delivery %>
+</p>
+
+<p>
+  <strong>Delivery instructions:</strong>
+  <%= @artist.delivery_instructions %>
+</p>
+
+<p>
+  <strong>Type of product:</strong>
+  <%= @artist.type_of_product %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @artist.notes %>
+</p>
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>

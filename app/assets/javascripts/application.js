@@ -15,6 +15,7 @@
 //= require jquery-ui-1.10.4.custom.min
 //= require jquery.easing.min
 //= require bootstrap.min
+//= require select2
 //= require smoothscroll
 //= require jquery.validate.min
 //= require icheck.min

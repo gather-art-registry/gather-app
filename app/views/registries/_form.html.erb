@@ -1,4 +1,4 @@
-<%= form_for(@registry) do |f| %>
+<%= form_for(@registry, html: {class: "form-horizontal"}) do |f| %>
   <% if @registry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@registry.errors.count, "error") %> prohibited this registry from being saved:</h2>
@@ -11,43 +11,64 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :type_of_event %><br>
-    <%= f.text_field :type_of_event %>
+  <div class="form-group">
+    <%= f.label :type_of_event, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :type_of_event, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :event_date %><br>
-    <%= f.date_select :event_date %>
+  <div class="form-group">
+    <%= f.label :event_date, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.date_select :event_date, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :registry_close_date %><br>
-    <%= f.date_select :registry_close_date %>
+  <div class="form-group">
+    <%= f.label :registry_close_date, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.date_select :registry_close_date, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :story %><br>
-    <%= f.text_area :story %>
+  <div class="form-group">
+    <%= f.label :story, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_area :story, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :event_website %><br>
-    <%= f.text_field :event_website %>
+  <div class="form-group">
+    <%= f.label :event_website, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :event_website, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :delivery_instructions %><br>
-    <%= f.text_area :delivery_instructions %>
+  <div class="form-group">
+    <%= f.label :delivery_instructions, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_area :delivery_instructions, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
+  <div class="form-group">
+    <%= f.label :notes, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_area :notes, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :publish %><br>
-    <%= f.check_box :publish %>
+  <div class="form-group">
+    <%= f.label :publish, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.check_box :publish, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+  <div class="form-group">
+    <%= f.label :user_id, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :user_id, class: "form-control" %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :submit, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.submit class: "btn btn-primary btn-block" %>
+    </div>
   </div>
 <% end %>

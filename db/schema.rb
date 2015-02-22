@@ -11,10 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221221530) do
+ActiveRecord::Schema.define(version: 20150222175806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: true do |t|
+    t.string   "primary_identifier"
+    t.string   "secondary_identifier"
+    t.text     "artist_statement"
+    t.text     "artist_bio"
+    t.string   "image"
+    t.string   "website"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "studio_address"
+    t.string   "studio_city"
+    t.string   "studio_state"
+    t.string   "studio_zip"
+    t.boolean  "active"
+    t.boolean  "studio_pickup"
+    t.boolean  "local_delivery"
+    t.text     "delivery_instructions"
+    t.integer  "type_of_product_id"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "artists", ["type_of_product_id"], name: "index_artists_on_type_of_product_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -36,6 +61,26 @@ ActiveRecord::Schema.define(version: 20150221221530) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "item_categories", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "item_categories", ["category_id"], name: "index_item_categories_on_category_id", using: :btree
+  add_index "item_categories", ["item_id"], name: "index_item_categories_on_item_id", using: :btree
+
+  create_table "item_media", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "medium_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "item_media", ["item_id"], name: "index_item_media_on_item_id", using: :btree
+  add_index "item_media", ["medium_id"], name: "index_item_media_on_medium_id", using: :btree
 
   create_table "items", force: true do |t|
     t.string   "name"
@@ -96,6 +141,13 @@ ActiveRecord::Schema.define(version: 20150221221530) do
   add_index "registries", ["user_id"], name: "index_registries_on_user_id", using: :btree
 
   create_table "shipping_instructions", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "type_of_products", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at"

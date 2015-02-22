@@ -1,4 +1,4 @@
-<%= form_for(@item) do |f| %>
+<%= form_for(@item, html: {class: "form-horizontal"}) do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -11,55 +11,94 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :name, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :artist_id %><br>
-    <%= f.text_field :artist_id %>
+  <div class="form-group">
+    <%= f.label :artist_id, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :artist_id, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :category, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= collection_check_boxes(:product, :category_id, Category.all, :id, :name) %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
+  <div class="form-group">
+    <%= f.label :medium, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= collection_check_boxes(:product, :medium_id, Medium.all, :id, :name) %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :item_availability_id %><br>
-    <%= f.text_field :item_availability_id %>
+  <div class="form-group">
+    <%= f.label :description, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_area :description, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :quantity %><br>
-    <%= f.number_field :quantity %>
+  <div class="form-group">
+    <%= f.label :price, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :price, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :special_order %><br>
-    <%= f.check_box :special_order %>
+  <div class="form-group">
+    <%= f.label :item_availability_id, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.collection_select :item_availability_id, ItemAvailability.all, :id, :name, id: "item-availability", include_blank: true, data: { placeholder: "Choose an Option"} %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :turn_around_time %><br>
-    <%= f.text_field :turn_around_time %>
+  <div class="form-group">
+    <%= f.label :quantity, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.number_field :quantity, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :production_category_id %><br>
-    <%= f.text_field :production_category_id %>
+  <div class="form-group">
+    <%= f.label :special_order, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.check_box :special_order, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :delivery_timing_id %><br>
-    <%= f.text_field :delivery_timing_id %>
+  <div class="form-group">
+    <%= f.label :turn_around_time, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_field :turn_around_time, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :shipping_instruction_id %><br>
-    <%= f.text_field :shipping_instruction_id %>
+  <div class="form-group">
+    <%= f.label :production_category_id, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.collection_select :production_category_id, ProductionCategory.all, :id, :name, id: "production-category", include_blank: true, data: { placeholder: "Choose an Option"} %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
+  <div class="form-group">
+    <%= f.label :delivery_timing_id, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.collection_select :delivery_timing_id, DeliveryTiming.all, :id, :name, id: "delivery-timing", include_blank: true, data: { placeholder: "Choose an Option"} %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :shipping_instruction_id, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.collection_select :shipping_instruction_id, ShippingInstruction.all, :id, :name, id: "shipping-instruction", include_blank: true, data: { placeholder: "Choose an Option"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :notes, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.text_area :notes, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :submit, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.submit class: "btn btn-primary btn-block" %>
+    </div>
   </div>
 <% end %>
