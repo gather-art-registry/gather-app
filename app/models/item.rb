@@ -9,9 +9,12 @@ class Item < ActiveRecord::Base
   has_many :media, through: :item_media
   accepts_nested_attributes_for :item_media, :allow_destroy => true
 
-  has_many :categories
-  has_many :media, through: :categories
-  accepts_nested_attributes_for :categories, :allow_destroy => true
+  has_many :item_categories
+  has_many :categories, through: :item_categories
+  accepts_nested_attributes_for :item_categories, :allow_destroy => true
+
+  has_many :gallery_items
+  has_many :galleries, through: :gallery_items
 
   mount_uploader :image_1, ImageUploader
   mount_uploader :image_2, ImageUploader

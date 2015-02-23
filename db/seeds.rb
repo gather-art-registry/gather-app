@@ -43,3 +43,9 @@ shipping_instructions = ShippingInstruction.create([{ name: 'Shipped Alone', des
 	{ name: 'Shipped with Others', description: 'Shipped with Others' },
 	{ name: 'Hand Delivered', description: 'Hand Delivered' },
 	{ name: 'Pick Up', description: 'Pick Up' }])
+
+type_of_product = TypeOfProduct.create([{ name: 'Commission', description: 'Commission' },
+	{ name: 'Special Order', description: 'Special Order' },
+	{ name: 'In-Stock', description: 'In-Stock' }])
+
+
