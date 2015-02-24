@@ -17,6 +17,7 @@ gem "font-awesome-rails"
 gem 'puma'
 gem "rmagick"
 gem "carrierwave"
+gem "fog"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
