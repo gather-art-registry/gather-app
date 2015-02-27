@@ -1,0 +1,16 @@
+development: &development
+  carrier_wave:
+    storage: file
+
+production:
+  amazon:
+    provider: AWS
+    bucket: gather-demo
+    aws_access_key_id: ENV["ACCESS_KEY_ID"]
+    aws_secret_access_key: ENV["SECRET_ACCESS_KEY"]
+  carrier_wave:
+    storage: fog
+
+test:
+  <<: *development
+

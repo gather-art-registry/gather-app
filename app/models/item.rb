@@ -20,4 +20,6 @@ class Item < ActiveRecord::Base
   mount_uploader :image_2, ImageUploader
   mount_uploader :image_3, ImageUploader
   mount_uploader :image_4, ImageUploader
+
+  validates :name, presence: true
 end

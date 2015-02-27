@@ -7,4 +7,7 @@ class Medium < ActiveRecord::Base
 
 	has_many :artist_media
 	has_many :artists, through: :artist_media
+
+	validates :name, presence: true
+	
 end
