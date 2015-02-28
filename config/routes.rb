@@ -14,11 +14,8 @@ Rails.application.routes.draw do
   resources :users
 
   root 'pages#home'
-
   get 'pages/about'
-
   get 'pages/terms_of_service'
-
   get 'pages/privacy_policy'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,21 +11,19 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require jquery-ui-1.10.4.custom.min
-//= require jquery.easing.min
 //= require bootstrap.min
 //= require select2
-//= require smoothscroll
-//= require jquery.validate.min
-//= require icheck.min
-//= require jquery.placeholder
-//= require jquery.stellar.min
-//= require jquery.touchSwipe.min
-//= require jquery.shuffle.min
-//= require lightGallery.min
-//= require owl.carousel.min
-//= require masterslider.min
-//= require scripts
+//= require jquery-latest.min
+//= require uikit
+//= require uikit-utils
+//= require jquery.bxslider-rahisified
+//= require jquery-ui.min
+//= require highlight.pack
+//= require bootstrap.min
+//= require jquery-scrollto
+//= require jquery.prettyPhoto
+//= require wow.min
+//= require theme
+//= require style-switcher
 // require turbolinks
 //= require_tree .

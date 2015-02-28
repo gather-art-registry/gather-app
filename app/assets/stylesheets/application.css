@@ -13,7 +13,13 @@
  *= require font-awesome
  *= require bootstrap.min
  *= require select2
- *= require styles
+ *= require uikit
+ *= require roboto
+ *= require roboto-cond
+ *= require themify-icons
+ *= require animate.min
+ * require bxslider
+ * require intro-slider
  *= require_tree .
  *= require_self
  */

@@ -15,7 +15,8 @@ FactoryGirl.define do
 	city { Faker::Address.city }
 	state { Faker::Address.state }
 	zip { Faker::Address.zip }
-	password { Faker::Internet.password }
+	password 'password'
+	password_confirmation 'password_confirmation'
   end
 
 end
