@@ -1,0 +1,59 @@
+<h1>Listing artists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primary identifier</th>
+      <th>Secondary identifier</th>
+      <th>Artist statement</th>
+      <th>Artist bio</th>
+      <th>Image</th>
+      <th>Website</th>
+      <th>Twitter</th>
+      <th>Facebook</th>
+      <th>Studio address</th>
+      <th>Studio city</th>
+      <th>Studio state</th>
+      <th>Studio zip</th>
+      <th>Active</th>
+      <th>Studio pickup</th>
+      <th>Local delivery</th>
+      <th>Delivery instructions</th>
+      <th>Type of product</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @artists.each do |artist| %>
+      <tr>
+        <td><%= artist.primary_identifier %></td>
+        <td><%= artist.secondary_identifier %></td>
+        <td><%= artist.artist_statement %></td>
+        <td><%= artist.artist_bio %></td>
+        <td><%= artist.image %></td>
+        <td><%= artist.website %></td>
+        <td><%= artist.twitter %></td>
+        <td><%= artist.facebook %></td>
+        <td><%= artist.studio_address %></td>
+        <td><%= artist.studio_city %></td>
+        <td><%= artist.studio_state %></td>
+        <td><%= artist.studio_zip %></td>
+        <td><%= artist.active %></td>
+        <td><%= artist.studio_pickup %></td>
+        <td><%= artist.local_delivery %></td>
+        <td><%= artist.delivery_instructions %></td>
+        <td><%= artist.type_of_product %></td>
+        <td><%= artist.notes %></td>
+        <td><%= link_to 'Show', artist %></td>
+        <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+        <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Artist', new_artist_path %>

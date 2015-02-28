@@ -48,7 +48,13 @@
             <!-- Collapse -->
             <div class="collapse navbar-collapse navbar-absolute">
             
-              <p class="navbar-text navbar-center">Welcome to our store. Login or registration is required to shop.</p>
+              <p class="navbar-text navbar-center">
+                <% if user_signed_in? %>
+                  Logged in as <%= current_user.username %>.
+                <% else %>
+                  Welcome to our store. Login or registration is required to shop.
+                  <% end %>
+              </p>
               
             </div>
             <!-- /Collapse -->
@@ -121,7 +127,6 @@
                       <!-- Nav Right -->
                       <ul class="nav navbar-nav navbar-right navbar-center-xs">
                         <% if user_signed_in? %>
-                          Logged in as <%= current_user.email %>.
                         <li class="dropdown has-panel">
                           <%= link_to "<i class='icon-left ti ti-pencil-alt'></i><span> EDIT PROFILE</span>".html_safe, edit_user_registration_path %></li>
                           <li><%= link_to "<i class='icon-left ti ti-pencil-alt'></i><span> LOG OUT</span>".html_safe, destroy_user_session_path, method: :delete %> 
@@ -251,7 +256,8 @@
                   <!-- /Mega Menu -->
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Artists<i class="fa fa-angle-down toggler"></i></a>
+                
+                <%= link_to "<span> Artists</span><i class='fa fa-angle-down toggler'></i>".html_safe, artists_path, class: "dropdown-toggle", data_toggle: 'dropdown' %>
                   <ul class="dropdown-menu">
                     <li><a href="uikit/index.html">Elements + Modules</a></li>
                     <li><a href="uikit/index.html#bxslider.demo?viewer=ajax">Sliders</a></li>

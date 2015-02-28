@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   
+  # scope module: 'admin' do
+  #   resources :artists do
+  #     resources :items, shallow: true
+  #   end
+  # end
+
   resources :galleries
 
-  resources :artists
-
-  resources :items
+  resources :artists do
+    resources :items, shallow: true
+  end
 
   resources :media
 

@@ -9,126 +9,192 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %><div class="panel-group" id="accordion">
+  <!-- Panel -->
+  <div class="panel panel-default">
+    <!-- Heading -->
+    <div class="panel-heading">
+      <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+        Basic Info
+      </a>
+      </h4>
+    </div>
+    <!-- /Heading -->
+    
+    <!-- Collapse -->
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <div class="form-group">
+          <%= f.label :primary_identifier, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_field :primary_identifier, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :secondary_identifier, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_field :secondary_identifier, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :medium, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= collection_check_boxes(:artist_medium, :medium_id, Medium.all, :id, :name) %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :artist_statement, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_area :artist_statement, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :artist_bio, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_area :artist_bio, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :image, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.file_field :image %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Collapse -->
+    
+  </div>
+  <!-- /Panel -->
 
-  <div class="form-group">
-    <%= f.label :primary_identifier, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_field :primary_identifier, class: "form-control" %>
+  <!-- Panel -->
+  <div class="panel panel-default">
+    <!-- Heading -->
+    <div class="panel-heading">
+      <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+        Studio Info
+      </a>
+      </h4>
     </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :secondary_identifier, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_field :secondary_identifier, class: "form-control" %>
+    <!-- /Heading -->
+    
+    <!-- Collapse -->
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="form-group">
+          <%= f.label :website, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_field :website, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :twitter, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_field :twitter, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :facebook, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_field :facebook, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :studio_address, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_field :studio_address, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :studio_city, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_field :studio_city, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :studio_state, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_field :studio_state, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :studio_zip, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_field :studio_zip, class: "form-control" %>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- /Collapse -->
+    
   </div>
-  <div class="form-group">
-    <%= f.label :medium, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= collection_check_boxes(:artist_medium, :medium_id, Medium.all, :id, :name) %>
+  <!-- /Panel -->
+
+  <!-- Panel -->
+  <div class="panel panel-default">
+    <!-- Heading -->
+    <div class="panel-heading">
+      <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+        Shipping Info
+      </a>
+      </h4>
     </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :artist_statement, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_area :artist_statement, class: "form-control" %>
+    <!-- /Heading -->
+    
+    <!-- Collapse -->
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="form-group">
+          <%= f.label :active, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.check_box :active, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :studio_pickup, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.check_box :studio_pickup, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :local_delivery, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.check_box :local_delivery, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :delivery_instructions, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_area :delivery_instructions, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :type_of_product_id, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_field :type_of_product_id, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :notes, class: "col-sm-3 control-label" %>
+          <div class="col-sm-8">
+          <%= f.text_area :notes, class: "form-control" %>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- /Collapse -->
   </div>
-  <div class="form-group">
-    <%= f.label :artist_bio, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_area :artist_bio, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :image, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.file_field :image %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :website, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_field :website, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :twitter, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_field :twitter, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :facebook, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_field :facebook, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :studio_address, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_field :studio_address, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :studio_city, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_field :studio_city, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :studio_state, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_field :studio_state, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :studio_zip, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_field :studio_zip, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :active, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.check_box :active, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :studio_pickup, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.check_box :studio_pickup, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :local_delivery, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.check_box :local_delivery, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :delivery_instructions, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_area :delivery_instructions, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :type_of_product_id, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_field :type_of_product_id, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :notes, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
-    <%= f.text_area :notes, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
+  <!-- /Panel -->
+  <br />
+   <div class="form-group">
     <%= f.label :submit, class: "col-sm-3 control-label" %>
-    <div class="col-sm-9">
+    <div class="col-sm-8">
     <%= f.submit class: "btn btn-primary btn-block" %>
     </div>
   </div>
-<% end %>
+  <% end %>
+</div>
+ 
