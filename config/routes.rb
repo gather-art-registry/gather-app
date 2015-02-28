@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # end
 
   resources :galleries
+  get 'categories' => 'galleries#categories'
 
   resources :artists do
     resources :items, shallow: true
@@ -14,7 +15,9 @@ Rails.application.routes.draw do
 
   resources :media
 
-  resources :registries
+  resources :registries do
+    resources :items, shallow: true
+  end
 
   devise_for :users
   resources :users

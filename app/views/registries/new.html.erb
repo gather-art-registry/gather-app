@@ -1,9 +1,60 @@
-<h1>New Registry</h1>
-<div class="row">
-  <div class="col-lg-8 col-md-8 col-lg-offset-1 col-md-offset-1">
+<!-- Intro Block
+============================================-->
+<section class="intro-block intro-page boxed-section page-bg overlay-dark">
+
+  <!-- Container -->
+  <div class="container">     
+    <!-- Section Title -->
+    <div class="section-title invert-colors no-margin-b">
+      <h2>Create a new registry with Gather</h2>
+      <p class="hidden-xs">Some text about creating a new registry.</p>
+    </div>
+    <!-- /Section Title -->
+  </div>
+  <!-- /Container -->
+
+</section>
+<!-- /Intro Block
+============================================-->
+
+<%= render 'top_info_block' %>
+
+<!-- Content Block
+============================================-->
+<section class="content-block default-bg">
+
+  <!-- Container -->
+  <div class="container no-pad-t">
+
+    <!-- Row -->
+    <div class="row">
+
+      <!-- Main Col -->
+      <div class="main-col col-sm-8 col-md-8 mgb-30-xs">
+      
+        <h4>New Registry</h4>
+        <p>Some text about setting-up an new registry.</p>
+        
+        <!-- Accordion -->
 
 		<%= render 'form' %>
 
 		<%= link_to 'Back', registries_path %>
+        <!-- /Accordion -->
+        
+      </div>
+      <!-- /Main Col -->
+
+	<%= render 'side_bar' %>
+		
 	</div>
-</div>
+    <!-- /Row -->
+  
+  </div>
+  <!-- /Container -->
+  
+</section>
+<!-- /Content Block
+============================================-->
+
+<%= render 'info_block' %>

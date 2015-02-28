@@ -8,6 +8,10 @@ class GalleriesController < ApplicationController
     respond_with(@galleries)
   end
 
+  def categories
+    @categories = Gallery.all
+  end
+
   def show
     respond_with(@gallery)
   end
