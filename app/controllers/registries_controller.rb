@@ -15,7 +15,7 @@ class RegistriesController < ApplicationController
   end
 
   def show
-    @items = Item.all
+    @items = @registry.items.all
     respond_with(@registry)
   end
 
@@ -30,12 +30,8 @@ class RegistriesController < ApplicationController
   def create
     @registry = Registry.new(registry_params)
 
-    if @registry.save
-      redirect_to action: show, id: @registry.id, user_id: @user.id, notice: 'Registry was successfully created.'
-    else
-      render :new 
-    end
-    # respond_with(@regstiry)
+    redirect_to action: show, id: @registry.id, user_id: @user.id, notice: 'Registry was successfully created.' and return if @registry.save
+    render :new 
   end
 
   def update

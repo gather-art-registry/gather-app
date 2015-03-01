@@ -1,94 +1,425 @@
-<p id="notice"><%= notice %></p>
+<!-- Intro Block
+============================================-->
+<section class="intro-block intro-page boxed-section page-bg overlay-dark">
 
-<p>
-  <strong>Primary identifier:</strong>
-  <%= @artist.primary_identifier %>
-</p>
+  <!-- Container -->
+  <div class="container">     
+    <!-- Section Title -->
+    <div class="section-title invert-colors no-margin-b">
+      <h2><%= @artist.primary_identifier %></h2>
+      <p class="hidden-xs">Helena is a freelance fashion house specialiasing in print designs and combining fabrics. Our stores can be found all over the world.</p>
+    </div>
+    <!-- /Section Title -->
+  </div>
+  <!-- /Container -->
 
-<p>
-  <strong>Secondary identifier:</strong>
-  <%= @artist.secondary_identifier %>
-</p>
+</section>
+<!-- /Intro Block
+============================================-->
 
-<p>
-  <strong>Artist statement:</strong>
-  <%= @artist.artist_statement %>
-</p>
+<!-- Page Info Block
+============================================-->
+<section class="page-info-block boxed-section">
 
-<p>
-  <strong>Artist bio:</strong>
-  <%= @artist.artist_bio %>
-</p>
+  <!-- Container -->
+  <div class="container cont-pad-x-15"> 
 
-<p>
-  <strong>Image:</strong>
-  <%= @artist.image %>
-</p>
+    <!-- Breadcrumb -->
+    <ol class="breadcrumb pull-left">
+      <li><a href="#"><i class="ti ti-home"></i></a></li>
+      <li><a href="#">Pages</a></li>
+      <li><a href="#">other</a></li>
+      <li class="active">blog</li>
+    </ol>
+    <!-- /Breadcrumb --> 
 
-<p>
-  <strong>Website:</strong>
-  <%= @artist.website %>
-</p>
+    <!-- hlinks -->
+    <ul class="page-links pull-right hlinks hlinks-icons color-icons-borders color-icons-bg-hovered">
+      <li><a href="#"><i class="icon fa fa-facebook"></i></a></li>
+      <li><a href="#"><i class="icon fa fa-twitter"></i></a></li>
+      <li><a href="#"><i class="icon fa fa-rss"></i></a></li>
+    </ul>
+    <!-- /hlinks -->
 
-<p>
-  <strong>Twitter:</strong>
-  <%= @artist.twitter %>
-</p>
+  </div>
+  <!-- /Container -->
 
-<p>
-  <strong>Facebook:</strong>
-  <%= @artist.facebook %>
-</p>
+</section>
+<!-- /Page Info  Block
+============================================-->
 
-<p>
-  <strong>Studio address:</strong>
-  <%= @artist.studio_address %>
-</p>
+<!-- Content Block
+============================================-->
+<section class="content-block default-bg">
 
-<p>
-  <strong>Studio city:</strong>
-  <%= @artist.studio_city %>
-</p>
+  <!-- Container -->
+  <div class="container cont-pad-t-sm">
 
-<p>
-  <strong>Studio state:</strong>
-  <%= @artist.studio_state %>
-</p>
+    <!-- Row -->
+    <div class="row">
 
-<p>
-  <strong>Studio zip:</strong>
-  <%= @artist.studio_zip %>
-</p>
+      <!-- Main Col -->
+      <div class="main-col col-sm-8 col-md-8 mgb-30-xs">
+      
+        <h4>Artist Statement</h4>
+        <p>
+          <%= @artist.artist_statement %>
+          <%= @artist.image %>
+        </p>
+        
+       <!-- Nested Row -->
+        <div class="row">
+        
+          <!-- Column -->
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <p>
+              <strong>Studio pickup:</strong>
+              <%= @artist.studio_pickup %>
+            </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @artist.active %>
-</p>
+            <p>
+              <strong>Local delivery:</strong>
+              <%= @artist.local_delivery %>
+            </p>
 
-<p>
-  <strong>Studio pickup:</strong>
-  <%= @artist.studio_pickup %>
-</p>
+            <p>
+              <strong>Delivery instructions:</strong>
+              <%= @artist.delivery_instructions %>
+            </p>
 
-<p>
-  <strong>Local delivery:</strong>
-  <%= @artist.local_delivery %>
-</p>
+            <p>
+              <strong>Type of product:</strong>
+              <%= @artist.type_of_product %>
+            </p>
+          </div>
+          <!-- /Column -->
+          
+          <!-- Column -->
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <p>
+              <strong>Website:</strong>
+              <%= @artist.website %>
+            </p>
 
-<p>
-  <strong>Delivery instructions:</strong>
-  <%= @artist.delivery_instructions %>
-</p>
+            <p>
+              <strong>Twitter:</strong>
+              <%= @artist.twitter %>
+            </p>
 
-<p>
-  <strong>Type of product:</strong>
-  <%= @artist.type_of_product %>
-</p>
+            <p>
+              <strong>Facebook:</strong>
+              <%= @artist.facebook %>
+            </p>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @artist.notes %>
-</p>
+            <p>
+              <strong>Studio address:</strong>
+              <%= @artist.studio_address %><br>
+              <%= @artist.studio_city %>, <%= @artist.studio_state %> <%= @artist.studio_zip %>
+            </p>
+          </div>
+          <!-- /Column -->
+          
+        </div>
+        <!-- /Nested Row -->
+        
+        <h4>Artist Bio</h4>
+          <p><%= @artist.artist_bio %></p>
+        
+        <div class="well">
+          <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+          <p>
+            <strong>Secondary identifier:</strong>
+            <%= @artist.secondary_identifier %>
+          </p>
+          <p>
+            <strong>Active:</strong>
+            <%= @artist.active %>
+          </p>
+          <p>
+            <strong>Notes:</strong>
+            <%= @artist.notes %>
+          </p>
+
+          <%= link_to 'Edit', edit_artist_path(@artist) %> |
+          <%= link_to 'Add Item', new_artist_item_path(artist_id: @artist.id) %> |
+          <%= link_to 'Back', artists_path %>
+        </div>
+        
+      </div>
+      <!-- /Main Col -->
+      
+      <!-- Side Col -->
+      <div class="side-col side-col-padded col-sm-4 col-md-4">
+
+        <!-- Side Widget -->
+        <div class="side-widget">
+        
+          <h5 class="boxed-title">page topics</h5>
+          
+          <ul class="ul-toggle">
+            <li><a href="#"><i class="icon fa fa-angle-right"></i>About our company</a><i class="toggler ti ti-plus"></i>
+              <ul>
+                <li><a href="#"><i class="icon fa fa-angle-right"></i>First Topic Link</a></li>
+                <li><a href="#"><i class="icon fa fa-angle-right"></i>Second Topic Link</a></li>
+                <li><a href="#"><i class="icon fa fa-angle-right"></i>Third Topic Link</a></li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="icon fa fa-angle-right"></i>Our Mission & Vision</a><i class="toggler ti ti-plus"></i>
+              <ul>
+                <li><a href="#">First Topic Link</a></li>
+                <li><a href="#">Second Topic Link</a></li>
+                <li><a href="#">Third Topic Link</a></li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="icon fa fa-angle-right"></i>Clients and case studies</a><i class="toggler ti ti-plus"></i>
+              <ul>
+                <li><a href="#">First Topic Link</a></li>
+                <li><a href="#">Second Topic Link</a></li>
+                <li><a href="#">Third Topic Link</a></li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="icon fa fa-angle-right"></i>Our portfolio</a></li>
+            <li><a href="#"><i class="icon fa fa-angle-right"></i>Price Plans</a></li>
+          </ul>
+          
+        </div>
+        <!-- /Side Widget -->
+        
+        <!-- Side Widget -->
+        <div class="side-widget">
+        
+          <h5 class="boxed-title">recent posts</h5>
+          
+          <ul class="vlinks vlinks-iconed vlinks-ruled-dots vlinks-lg">
+            <li><img src="images/thumb1.jpg" alt="" class="img"><a class="title" href="blog-post.html">New blog post</a><span class="meta"><i class="icon-left fa fa-comments"></i>5 comments</span></li>
+            <li><img src="images/thumb2.jpg" alt="" class="img"><a class="title" href="blog-post.html">New blog post</a><span class="meta"><i class="icon-left fa fa-comments"></i>10 comments</span></li>
+            <li><img src="images/thumb3.jpg" alt="" class="img"><a class="title" href="blog-post.html">New blog post</a><span class="meta"><i class="icon-left fa fa-comments"></i>22 comments</span></li>
+          </ul>
+          
+        </div>
+        <!-- /Side Widget -->
+        
+      </div>
+      <!-- /Side Col -->
+
+    </div>
+    <!-- /Row -->
+  
+  </div>
+  <!-- /Container -->
+  
+</section>
+<!-- /Content Block
+============================================-->
+
+
+<!-- Page Info Block
+============================================-->
+<section class="page-info-block boxed-section">
+
+  <!-- Container -->
+  <div class="container cont-pad-t-sm">
+
+    <!-- Row -->
+    <div class="row">
+
+      <!-- Main Col -->
+      <div class="main-col">
+
+<!-- Products Filter -->
+        <div class="products-filter clearfix">
+          <div class="display">
+            <span class="show-list" onclick="changeView('list')"><span class="text hidden-xs">List</span><i class="icon fa fa-th-list"></i></span>
+            <span class="show-grid" onclick="changeView('grid')"><span class="text hidden-xs">Grid</span><i class="icon fa fa-th"></i></span>
+          </div>
+
+          <div class="filter"><b class="hidden-xs">No</b>
+            <select>
+            <option value="9" selected="selected">9</option>
+            <option value="12">12</option>
+            <option value="15">15</option>
+            <option value="18">18</option>
+            </select>
+          </div>
+          
+          <div class="filter"><b class="hidden-xs">Sort By</b>
+            <select>
+            <option value="9" selected="selected">Date</option>
+            <option value="12">Price</option>
+            <option value="15">Popularity</option>
+            </select>
+          </div>
+        
+        </div>
+        <!-- /Products Filter -->
+      
+        <!-- Row -->
+        <div class="product-grid row grid-20 mgb-20">
+        
+          <% @items.each do |item| %>
+
+          <!-- Col -->
+          <div class="col-sm-6 col-md-3">
+          
+            <!-- product -->
+            <div class="product clearfix">
+            
+              <!-- Image -->
+              <div class="image"> 
+                <a href="product.html" class="main"><img src="images/products/product1.jpg" alt=""></a>
+                <ul class="additional">
+                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
+                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
+                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
+                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
+                </ul>
+              </div>
+              <!-- Image -->
+              
+              <span class="label label-sale">sale</span>
+              
+              <!-- Details -->
+              <div class="details">
+              
+                <a class="title" href="product.html"><%= item.name %></a>
+                
+                
+                <p class="desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
+                
+                <!-- Price Box -->
+                <div class="price-box">
+                  <span class="price">Number of Items: </span>
+                </div>
+                <!-- /Price Box -->
+                
+                <!-- buttons -->
+                <div class="btn-group">
+                  <a class="btn btn-outline btn-base-hover" href="cart.html">add to cart</a>  
+                  <a class="btn btn-outline btn-default-hover" href="product.html"><i class="icon fa fa-heart"></i></a>
+                </div> 
+                <!-- /buttons -->
+                
+              </div>
+              <!-- /Details -->
+              
+            </div>
+            <!-- /product -->
+          
+          </div>
+          <!-- /Col -->
+          
+        <% end %>
+          
+          <!-- Col -->
+          <div class="col-sm-6 col-md-3">
+          
+            <!-- product -->
+            <div class="product clearfix">
+            
+              <!-- Image -->
+              <div class="image"> 
+                <a href="product.html" class="main"><img src="images/products/product2.jpg" alt=""></a>
+                <ul class="additional">
+                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
+                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
+                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
+                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
+                </ul>
+              </div>
+              <!-- Image -->
+              
+              <!-- Details -->
+              <div class="details">
+              
+                <a class="title" href="product.html">Item Name</a>
+                
+                <p class="desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
+                
+                <!-- Price Box -->
+                <div class="price-box">
+                  <span class="price">Number of Items: #</span>
+                </div>
+                <!-- /Price Box -->
+                
+                <!-- buttons -->
+                <div class="btn-group">
+                  <a class="btn btn-outline btn-base-hover" href="cart.html">add to cart</a>  
+                  <a class="btn btn-outline btn-default-hover" href="product.html"><i class="icon fa fa-heart"></i></a>
+                </div> 
+                <!-- /buttons -->
+                
+              </div>
+              <!-- /Details -->
+              
+            </div>
+            <!-- /product -->
+          
+          </div>
+          <!-- /Col -->
+
+        </div>
+        <!-- /Row -->
+        
+        <!-- Pagination -->
+        <ul class="pagination">
+          <li><a href="#">&laquo;</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">&raquo;</a></li>
+        </ul>
+        <!-- /Pagination -->
+        
+      </div>
+      <!-- /Main Col -->
+
+    </div>
+    <!-- /Row -->
+  
+  </div>
+  <!-- /Container -->
+  
+</section>
+<!-- /Content Block
+============================================-->
+
+<!-- Info Block
+============================================ -->
+<div class="info-block page-bg overlay-dark boxed-section">
+
+  <!-- Container -->
+  <div class="container">
+  
+    <!-- Row -->
+    <div class="row">
+      <!-- Col -->
+      <div class="col-md-3 hidden-xs hidden-sm">
+        <span class="text case-u"><i class="ti ti-comments icon-left"></i>live chat</span>
+      </div>
+      <!-- Col -->
+      
+      <!-- Col -->
+      <div class="col-md-6">
+        <span class="text case-u align-center">enjoy free <a href="#">delivery</a> for any <a href="#">orders</a> within the city</span>
+      </div>
+      <!-- Col -->
+      
+      <!-- Col -->
+      <div class="col-md-3 hidden-xs hidden-sm">
+        <span class="text case-u pull-right"><i class="ti-headphone-alt icon-left"></i><b class="visible-lg-inline">support : </b>+(254) 560 400 333</span>
+      </div>
+      <!-- /Col -->
+      
+    </div>
+    <!-- /Row -->
+  </div>
+  <!-- /Container -->
+
+</div>
+<!-- /Info Block
+=================================================== -->
+
+

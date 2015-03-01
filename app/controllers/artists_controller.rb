@@ -9,6 +9,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @items = @artist.items.all
     respond_with(@artist)
   end
 

@@ -1,10 +1,37 @@
-<h1>Edit Item</h1>
-<div class="row">
-  <div class="col-lg-8 col-md-8 col-lg-offset-1 col-md-offset-1">
+<!-- Content Block
+============================================-->
+<section class="content-block default-bg">
+
+  <!-- Container -->
+  <div class="container no-pad-t">
+
+    <!-- Row -->
+    <div class="row">
+
+      <!-- Main Col -->
+      <div class="main-col col-sm-8 col-md-8 mgb-30-xs">
+      
+        <h4>Edit Item</h4>
+        
+        <!-- Accordion -->
 
 		<%= render 'form' %>
 
 		<%= link_to 'Show', @item %> |
 		<%= link_to 'Back', items_path %>
+        <!-- /Accordion -->
+        
+      </div>
+      <!-- /Main Col -->
+
+	<%= render 'side_bar' %>
+		
 	</div>
-</div>
+    <!-- /Row -->
+  
+  </div>
+  <!-- /Container -->
+  
+</section>
+<!-- /Content Block
+============================================-->

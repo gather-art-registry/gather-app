@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   resources :galleries
   get 'categories' => 'galleries#categories'
   get 'registries' => 'registries#admin_index'
+  get 'items/:id' => 'items#show'
 
   resources :artists do
-    resources :items, shallow: true
+    resources :items
   end
 
   resources :media
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :registries do
-    resources :items, shallow: true
+    resources :items
   end
 
   devise_for :users
