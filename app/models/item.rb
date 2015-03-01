@@ -16,6 +16,9 @@ class Item < ActiveRecord::Base
   has_many :gallery_items
   has_many :galleries, through: :gallery_items
 
+  has_many :registry_items
+  has_many :registries, through: :registry_items
+
   mount_uploader :image_1, ImageUploader
   mount_uploader :image_2, ImageUploader
   mount_uploader :image_3, ImageUploader

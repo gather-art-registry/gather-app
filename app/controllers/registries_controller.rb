@@ -1,5 +1,6 @@
 class RegistriesController < ApplicationController
   before_action :set_registry, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, except: :admin_index
 
   respond_to :html
 
@@ -8,7 +9,13 @@ class RegistriesController < ApplicationController
     respond_with(@registries)
   end
 
+  def admin_index
+    @registries = Registry.all
+    respond_with(@registries)
+  end
+
   def show
+    @items = Item.all
     respond_with(@registry)
   end
 
@@ -22,8 +29,13 @@ class RegistriesController < ApplicationController
 
   def create
     @registry = Registry.new(registry_params)
-    @registry.save
-    respond_with(@registry)
+
+    if @registry.save
+      redirect_to action: show, id: @registry.id, user_id: @user.id, notice: 'Registry was successfully created.'
+    else
+      render :new 
+    end
+    # respond_with(@regstiry)
   end
 
   def update
@@ -39,6 +51,10 @@ class RegistriesController < ApplicationController
   private
     def set_registry
       @registry = Registry.find(params[:id])
+    end
+
+    def set_user
+      @user = User.find(params[:user_id])
     end
 
     def registry_params

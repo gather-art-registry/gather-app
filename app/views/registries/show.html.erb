@@ -47,3 +47,263 @@
 
 <%= link_to 'Edit', edit_registry_path(@registry) %> |
 <%= link_to 'Back', registries_path %>
+
+<!-- Page Info
+      ============================================-->
+      <section class="page-info-block page-info-alt boxed-section">
+      
+        <!-- Container -->
+        <div class="container cont-pad-x-15"> 
+
+          <!-- Breadcrumb -->
+          <ol class="breadcrumb pull-left">
+            <li><a href="#"><i class="ti ti-home"></i></a></li>
+            <li><a href="#">Pages</a></li>
+            <li class="active">features</li>
+          </ol>
+          <!-- /Breadcrumb --> 
+
+          <!-- hlinks -->
+          <ul class="page-links pull-right hlinks hlinks-icons color-icons-borders color-icons-bg-hovered">
+            <li><a href="#"><i class="icon fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="icon fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="icon fa fa-rss"></i></a></li>
+          </ul>
+          <!-- /hlinks -->
+
+        </div>
+        <!-- /Container -->
+      
+      </section>
+      <!-- /Page Info Block
+      ============================================-->
+      
+      <!-- Content Block
+      ============================================ -->
+      <section class="content-block has-sidebar default-bg">
+      
+        <!-- Container -->
+        <div class="container cont-main no-pad-t">
+        
+          <!-- Row -->
+          <div class="row">
+
+            <!-- Main Col -->
+            <div class="main-col col-sm-9 col-md-9">
+            
+              <!-- Categ Slider -->
+              <div class="categ-slider bx-pager-bottom-right mgb-20">
+                <ul class="bxslider" data-call="bxslider" data-options="{controls:false}">
+                  <li><img src="images/slides/slide1-text.jpg" alt=""/></li>
+                  <li><img src="images/slides/slide2-text.jpg" alt=""/></li>
+                  <li><img src="images/slides/slide3-text.jpg" alt=""/></li>
+                </ul>
+              </div>
+              <!-- /Categ Slider -->
+            
+              <!-- Products Filter -->
+              <div class="products-filter clearfix">
+                <div class="display">
+                  <span class="show-list" onclick="changeView('list')"><span class="text hidden-xs">List</span><i class="icon fa fa-th-list"></i></span>
+                  <span class="show-grid" onclick="changeView('grid')"><span class="text hidden-xs">Grid</span><i class="icon fa fa-th"></i></span>
+                </div>
+
+                <div class="filter"><b class="hidden-xs">No</b>
+                  <select>
+                  <option value="9" selected="selected">9</option>
+                  <option value="12">12</option>
+                  <option value="15">15</option>
+                  <option value="18">18</option>
+                  </select>
+                </div>
+                
+                <div class="filter"><b class="hidden-xs">Sort By</b>
+                  <select>
+                  <option value="9" selected="selected">Date</option>
+                  <option value="12">Price</option>
+                  <option value="15">Popularity</option>
+                  </select>
+                </div>
+              
+              </div>
+              <!-- /Products Filter -->
+            
+              <!-- Row -->
+              <div class="product-grid row grid-20 mgb-20">
+              
+                <% @items.each do |item| %>
+
+                <!-- Col -->
+                <div class="col-sm-6 col-md-4">
+                
+                  <!-- product -->
+                  <div class="product clearfix">
+                  
+                    <!-- Image -->
+                    <div class="image"> 
+                      <a href="product.html" class="main"><img src="images/products/product1.jpg" alt=""></a>
+                      <ul class="additional">
+                        <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
+                        <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
+                        <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
+                        <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
+                      </ul>
+                    </div>
+                    <!-- Image -->
+                    
+                    <span class="label label-sale">sale</span>
+                    
+                    <!-- Details -->
+                    <div class="details">
+                    
+                      <a class="title" href="product.html"><%= item.name %></a>
+                      
+                      
+                      <p class="desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
+                      
+                      <!-- Price Box -->
+                      <div class="price-box">
+                        <span class="price">Number of Items: </span>
+                      </div>
+                      <!-- /Price Box -->
+                      
+                      <!-- buttons -->
+                      <div class="btn-group">
+                        <a class="btn btn-outline btn-base-hover" href="cart.html">add to cart</a>  
+                        <a class="btn btn-outline btn-default-hover" href="product.html"><i class="icon fa fa-heart"></i></a>
+                      </div> 
+                      <!-- /buttons -->
+                      
+                    </div>
+                    <!-- /Details -->
+                    
+                  </div>
+                  <!-- /product -->
+                
+                </div>
+                <!-- /Col -->
+                
+              <% end %>
+                
+                <!-- Col -->
+                <div class="col-sm-6 col-md-4">
+                
+                  <!-- product -->
+                  <div class="product clearfix">
+                  
+                    <!-- Image -->
+                    <div class="image"> 
+                      <a href="product.html" class="main"><img src="images/products/product2.jpg" alt=""></a>
+                      <ul class="additional">
+                        <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
+                        <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
+                        <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
+                        <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
+                      </ul>
+                    </div>
+                    <!-- Image -->
+                    
+                    <!-- Details -->
+                    <div class="details">
+                    
+                      <a class="title" href="product.html">Black lase blouse</a>
+                      
+                      <!-- rating -->
+                      <ul class="hlinks hlinks-rating">
+                        <li class="active"><a href="#"><i class="icon fa fa-star"></i></a></li>
+                        <li class="active"><a href="#"><i class="icon fa fa-star"></i></a></li>
+                        <li class="active"><a href="#"><i class="icon fa fa-star"></i></a></li>
+                        <li><a href="#"><i class="icon fa fa-star"></i></a></li>
+                        <li><a href="#"><i class="icon fa fa-star"></i></a></li>
+                      </ul>
+                      <!-- /rating -->
+                      
+                      <p class="desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
+                      
+                      <!-- Price Box -->
+                      <div class="price-box">
+                        <span class="price">$2600</span>
+                      </div>
+                      <!-- /Price Box -->
+                      
+                      <!-- buttons -->
+                      <div class="btn-group">
+                        <a class="btn btn-outline btn-base-hover" href="cart.html">add to cart</a>  
+                        <a class="btn btn-outline btn-default-hover" href="product.html"><i class="icon fa fa-heart"></i></a>
+                      </div> 
+                      <!-- /buttons -->
+                      
+                    </div>
+                    <!-- /Details -->
+                    
+                  </div>
+                  <!-- /product -->
+                
+                </div>
+                <!-- /Col -->
+
+              </div>
+              <!-- /Row -->
+              
+              <!-- Pagination -->
+              <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+              <!-- /Pagination -->
+              
+            </div>
+            <!-- /Main Col -->
+            
+            <%= render "side_bar" %>
+
+          </div>
+          <!-- /Row -->
+        
+        </div>
+        <!-- /Container -->
+        
+      </section>
+      <!-- /Content Block
+      ============================================-->
+
+      <!-- Info Block
+      ============================================ -->
+      <div class="info-block page-bg overlay-dark boxed-section">
+      
+        <!-- Container -->
+        <div class="container">
+        
+          <!-- Row -->
+          <div class="row">
+            <!-- Col -->
+            <div class="col-md-3 hidden-xs hidden-sm">
+              <span class="text case-u"><i class="ti ti-comments icon-left"></i>live chat</span>
+            </div>
+            <!-- Col -->
+            
+            <!-- Col -->
+            <div class="col-md-6">
+              <span class="text case-u align-center">enjoy free <a href="#">delivery</a> for any <a href="#">orders</a> within the city</span>
+            </div>
+            <!-- Col -->
+            
+            <!-- Col -->
+            <div class="col-md-3 hidden-xs hidden-sm">
+              <span class="text case-u pull-right"><i class="ti-headphone-alt icon-left"></i><b class="visible-lg-inline">support : </b>+(254) 560 400 333</span>
+            </div>
+            <!-- /Col -->
+            
+          </div>
+          <!-- /Row -->
+        </div>
+        <!-- /Container -->
+      
+      </div>
+      <!-- /Info Block
+      =================================================== -->

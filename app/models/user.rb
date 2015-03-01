@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
 
   validates :email, :username, presence: true
 
+  def user_id
+  	self.user_id
+  end
+
 end

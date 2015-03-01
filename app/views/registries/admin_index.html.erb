@@ -10,33 +10,33 @@
 
       <!-- Main Col -->
       <div class="main-col col-sm-8 col-md-8 mgb-30-xs">
-        <h4>Users</h4>
+        <h4>Registries</h4>
         <div class="panel panel-default">
           <div class="panel-heading">
-              <h4 class="panel-title">Table Striped</h4>
+              <h4 class="panel-title">All</h4>
           </div>
           <div class="panel-body">
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>Username</th>
-                  <th>Name</th>                
-                  <th>Email</th>
-                  <th>City</th>
-                  <th>State</th>
+                  <th>Type of event</th>
+                  <th>Event date</th>
+                  <th>Registry close date</th>
+                  <th>Publish</th>
+                  <th>User</th>
                   <th></th>
                 </tr>
               </thead>
 
               <tbody>
-                <% @users.each do |user| %>
+                <% @registries.each do |registry| %>
                   <tr>
-                    <td><%= user.username %></td>
-                    <td><%= user.first_name %> <%= user.last_name %></td>
-                    <td><%= user.email %></td>
-                    <td><%= user.city %></td>
-                    <td><%= user.state %></td>
-                    <td><%= link_to 'Show', user %> <%= link_to 'Edit', edit_user_path(user) %> <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <td><%= registry.type_of_event %></td>
+                    <td><%= registry.event_date %></td>
+                    <td><%= registry.registry_close_date %></td>
+                    <td><%= registry.publish %></td>
+                    <td><%= registry.user.username %></td>
+                    <td><%= link_to 'Edit', edit_registry_path(registry) %> <%= link_to 'Destroy', registry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                   </tr>
                 <% end %>
               </tbody>
@@ -50,9 +50,9 @@
               
       </div>
       <!-- /Main Col -->
-
-      <%= render "pages/admin_side_bar" %>
       
+      <%= render "pages/admin_side_bar" %>
+
     </div>
     <!-- /Row -->
   

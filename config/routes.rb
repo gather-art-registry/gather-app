@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :galleries
   get 'categories' => 'galleries#categories'
+  get 'registries' => 'registries#admin_index'
 
   resources :artists do
     resources :items, shallow: true
@@ -15,12 +16,17 @@ Rails.application.routes.draw do
 
   resources :media
 
+  resources :users do
+    resources :registries
+  end
+
   resources :registries do
     resources :items, shallow: true
   end
 
   devise_for :users
-  resources :users
+  
+  resources :items
 
   root 'pages#home'
   get 'pages/about'

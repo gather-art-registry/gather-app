@@ -59,12 +59,9 @@
     <%= f.check_box :publish, class: "form-control" %>
     </div>
   </div>
-  <div class="form-group">
-    <%= f.label :user_id, class: "col-sm-3 control-label" %>
-    <div class="col-sm-8">
-    <%= f.text_field :user_id, class: "form-control" %>
-    </div>
-  </div>
+
+  <%= f.hidden_field :user_id, value: @user.id %>
+
   <div class="form-group">
     <%= f.label :submit, class: "col-sm-3 control-label" %>
     <div class="col-sm-8">

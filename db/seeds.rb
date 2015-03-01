@@ -48,4 +48,14 @@ type_of_product = TypeOfProduct.create([{ name: 'Commission', description: 'Comm
 	{ name: 'Special Order', description: 'Special Order' },
 	{ name: 'In-Stock', description: 'In-Stock' }])
 
+galleries = Gallery.create([{ name: 'Permanent Collection', description: 'Permanent Collection' },
+	{ name: 'For the Wall', description: 'For the Wall' },
+	{ name: 'For the Kitchen', description: 'For the Kitchen' },
+	{ name: 'For the Table', description: 'For the Table' },
+	{ name: 'For Special Occasions', description: 'For Special Occasions' },
+	{ name: 'For the House', description: 'For the House' },
+	{ name: 'For the Outdoors', description: 'For the Outdoors' },
+	{ name: 'For the Special Event', description: 'For the Special Event' } 
+	])
+
 
