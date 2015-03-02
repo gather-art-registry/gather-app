@@ -8,6 +8,8 @@ class Artist < ActiveRecord::Base
 
   validates :primary_identifier, presence: true
 
+  mount_uploader :image, ImageUploader
+
   def artist_id
   	self.id
   end

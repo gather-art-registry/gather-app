@@ -1,0 +1,47 @@
+<!-- Col -->
+<div class="col-sm-6 col-md-4">
+
+  <!-- product -->
+  <div class="product clearfix">
+  
+    <!-- Image -->
+    <div class="image"> 
+      <%= image_tag item.image_1, class: "main", alt: "" %>
+      <ul class="additional">
+        <li><%= image_tag item.image_1 %></li>
+        <li><%= image_tag item.image_2 %></li>
+        <li><%= image_tag item.image_3 %></li>
+        <li><%= image_tag item.image_4 %></li>
+      </ul>
+    </div>
+    <!-- Image -->
+    
+    <!-- Details -->
+    <div class="details">
+    
+      <%= link_to item.name, item_path(item.id), class: "title" %>
+      
+      
+      <p class="desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
+      
+      <!-- Price Box -->
+      <div class="price-box">
+        <span class="price">Number of Items: <%= item.quantity %></span>
+      </div>
+      <!-- /Price Box -->
+      
+      <!-- buttons -->
+      <div class="btn-group">
+        <a class="btn btn-outline btn-base-hover" href="cart.html">add to cart</a>  
+        <a class="btn btn-outline btn-default-hover" href="product.html"><i class="icon fa fa-heart"></i></a>
+      </div> 
+      <!-- /buttons -->
+      
+    </div>
+    <!-- /Details -->
+    
+  </div>
+  <!-- /product -->
+
+</div>
+<!-- /Col -->

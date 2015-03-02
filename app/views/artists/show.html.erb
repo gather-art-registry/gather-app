@@ -63,8 +63,8 @@
       
         <h4>Artist Statement</h4>
         <p>
+          <%= image_tag @artist.image, size: "250x250", class: "img-circle pull-right" %>
           <%= @artist.artist_statement %>
-          <%= @artist.image %>
         </p>
         
        <!-- Nested Row -->
@@ -151,6 +151,8 @@
       
       <!-- Side Col -->
       <div class="side-col side-col-padded col-sm-4 col-md-4">
+
+        <br>
 
         <!-- Side Widget -->
         <div class="side-widget">

@@ -6,7 +6,7 @@
   <div class="container">     
     <!-- Section Title -->
     <div class="section-title invert-colors no-margin-b">
-      <h2>category title</h2>
+      <h2>Gather Artists</h2>
       <p class="hidden-xs">Helena is a freelance fashion house specialiasing in print designs and combining fabrics. Our stores can be found all over the world.</p>
     </div>
     <!-- /Section Title -->
@@ -27,8 +27,8 @@
     <!-- Breadcrumb -->
     <ol class="breadcrumb pull-left">
       <li><a href="#"><i class="ti ti-home"></i></a></li>
-      <li><a href="#">Pages</a></li>
-      <li class="active">features</li>
+      <li><a href="#">Artists</a></li>
+      <li class="active">All</li>
     </ol>
     <!-- /Breadcrumb --> 
 
@@ -99,17 +99,14 @@
             
               <!-- Image -->
               <div class="image"> 
-                <td><%= image_tag artist.image, class: "main", alt: "" %></td>
+                <td><%= image_tag artist.image, class: "img-circle", alt: "" %></td>
                 <ul class="additional">
-                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
-                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
-                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
-                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
+                  <% artist.items.take(4).each do |item| %>
+                  <li><%= image_tag item.image_1 %></li>
+                  <% end %>
                 </ul>
               </div>
               <!-- Image -->
-              
-              <span class="label label-sale">sale</span>
               
               <!-- Details -->
               <div class="details">
