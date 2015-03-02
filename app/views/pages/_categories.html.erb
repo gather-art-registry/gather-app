@@ -4,7 +4,7 @@
     	<h2>Browse categories</h2>
     	<div class="row">
       	<!--Category-->
-        <% Category.take(6).each do |category| %>
+        <% Category.all.each do |category| %>
       	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
         	<a href="#">
             <%= image_tag "category.png", alt: "" %>
