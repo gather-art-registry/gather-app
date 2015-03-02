@@ -1,8 +1,8 @@
 class PagesController < ApplicationController
   def home
-  	@latest_items = Item.take(8)
-  	@featured_items = Item.take(8)
-  	@trending_items = Item.take(8)
+  	@latest_items = Item.all
+  	@featured_items = Item.all
+  	@trending_items = Item.all
   end
 
   def about
