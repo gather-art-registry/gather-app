@@ -10,7 +10,7 @@ $n: 0;
     @font-face {
       font-family: $family;
       src:font-url("#{nth($font, 1)}.eot");
-      src:font-url("#{nth($font, 1)}.eot?#iefix"), url("#{nth($font, 1)}.woff") format("woff"), url("#{nth($font, 1)}.ttf") format("truetype"), url("#{nth($font, 1)}.svg##{$family}") format("svg");
+      src:font-url("#{nth($font, 1)}.eot?#iefix"), font-url("#{nth($font, 1)}.woff") format("woff"), font-url("#{nth($font, 1)}.ttf") format("truetype"), font-url("#{nth($font, 1)}.svg##{$family}") format("svg");
       font-weight: nth($font, 2);
       font-style: nth($font, 3);
     }
