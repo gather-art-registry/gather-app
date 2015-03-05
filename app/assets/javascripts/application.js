@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require bootstrap.min
-//= require select2
 //= require jquery-latest.min
 //= require uikit
 //= require uikit-utils
@@ -24,6 +23,7 @@
 //= require jquery.prettyPhoto
 //= require wow.min
 //= require theme
+//= require select2
 //= require style-switcher
 // require turbolinks
 //= require_tree .

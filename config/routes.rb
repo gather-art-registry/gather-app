@@ -6,14 +6,13 @@ Rails.application.routes.draw do
   #   end
   # end
 
+  get 'permanent_collection' => 'galleries#index'
   resources :galleries
   get 'categories' => 'galleries#categories'
   get 'registries' => 'registries#admin_index'
-  get 'items/:id' => 'items#show'
 
-  resources :artists do
-    resources :items
-  end
+  resources :items
+  resources :artists
 
   resources :media
 
@@ -27,12 +26,13 @@ Rails.application.routes.draw do
 
   devise_for :users
   
-  resources :items
+  
 
   root 'pages#home'
   get 'pages/about'
   get 'pages/terms_of_service'
   get 'pages/privacy_policy'
+  get 'pages/contact_us'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

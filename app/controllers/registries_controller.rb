@@ -30,7 +30,7 @@ class RegistriesController < ApplicationController
   def create
     @registry = Registry.new(registry_params)
 
-    redirect_to action: show, id: @registry.id, user_id: @user.id, notice: 'Registry was successfully created.' and return if @registry.save
+    redirect_to action: show, id: @registry.id, user_id: @user.id and return if @registry.save
     render :new 
   end
 

@@ -127,58 +127,14 @@
         <!-- Row -->
         <div class="product-grid row grid-20 mgb-20">
         
-          <% @items.each do |item| %>
+        <% @items.each do |item| %>
 
-          <!-- Col -->
-          <div class="col-sm-6 col-md-4">
-          
-            <!-- product -->
-            <div class="product clearfix">
-            
-              <!-- Image -->
-              <div class="image"> 
-                <a href="product.html" class="main"><img src="images/products/product1.jpg" alt=""></a>
-                <ul class="additional">
-                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
-                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
-                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
-                  <li><a href="images/products/product1.jpg" data-gal="prettyPhoto[gallery 1]" title="Product Name"><img src="images/products/product1.jpg" alt=""></a></li>
-                </ul>
-              </div>
-              <!-- Image -->
-              
-              <span class="label label-sale">sale</span>
-              
-              <!-- Details -->
-              <div class="details">
-              
-                <a class="title" href="product.html"><%= item.name %></a>
-                
-                
-                <p class="desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
-                
-                <!-- Price Box -->
-                <div class="price-box">
-                  <span class="price">Number of Items: </span>
-                </div>
-                <!-- /Price Box -->
-                
-                <!-- buttons -->
-                <div class="btn-group">
-                  <a class="btn btn-outline btn-base-hover" href="cart.html">add to cart</a>  
-                  <a class="btn btn-outline btn-default-hover" href="product.html"><i class="icon fa fa-heart"></i></a>
-                </div> 
-                <!-- /buttons -->
-                
-              </div>
-              <!-- /Details -->
-              
-            </div>
-            <!-- /product -->
-          
-          </div>
-          <!-- /Col -->
-          
+        <div class="col-sm-4 col-md-3">
+
+          <%= render "pages/single_item", item: item %>
+
+        </div>
+
         <% end %>
           
           <!-- Col -->

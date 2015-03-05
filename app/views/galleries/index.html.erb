@@ -1,29 +1,137 @@
-<h1>Listing galleries</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Artist</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- Intro Block
+============================================-->
+<section class="intro-block intro-page boxed-section page-bg overlay-dark">
 
-  <tbody>
-    <% @galleries.each do |gallery| %>
-      <tr>
-        <td><%= gallery.name %></td>
-        <td><%= gallery.description %></td>
-        <td><%= gallery.artist %></td>
-        <td><%= link_to 'Show', gallery %></td>
-        <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
-        <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <!-- Container -->
+  <div class="container">     
+    <!-- Section Title -->
+    <div class="section-title invert-colors no-margin-b">
+      <h2>permanent collection</h2>
+      <p class="hidden-xs">Helena is a freelance fashion house specialiasing in print designs and combining fabrics. Our stores can be found all over the world.</p>
+    </div>
+    <!-- /Section Title -->
+  </div>
+  <!-- /Container -->
 
-<br>
+</section>
+<!-- /Intro Block
+============================================-->
 
-<%= link_to 'New Gallery', new_gallery_path %>
+<!-- Content Block
+============================================ -->
+<section class="content-block default-bg">
+
+  <!-- Container -->
+  <div class="container cont-main no-pad-t">
+  
+    <!-- Row -->
+    <div class="row">
+
+      <!-- Main Col -->
+      <div class="main-col col-sm-9 col-md-9">
+      
+        <!-- Products Filter -->
+        <div class="products-filter clearfix">
+          <div class="display">
+            <span class="show-list" onclick="changeView('list')"><span class="text hidden-xs">List</span><i class="icon fa fa-th-list"></i></span>
+            <span class="show-grid" onclick="changeView('grid')"><span class="text hidden-xs">Grid</span><i class="icon fa fa-th"></i></span>
+          </div>
+
+          <div class="filter"><b class="hidden-xs">No</b>
+            <select>
+            <option value="9" selected="selected">9</option>
+            <option value="12">12</option>
+            <option value="15">15</option>
+            <option value="18">18</option>
+            </select>
+          </div>
+          
+          <div class="filter"><b class="hidden-xs">Sort By</b>
+            <select>
+            <option value="9" selected="selected">Date</option>
+            <option value="12">Price</option>
+            <option value="15">Popularity</option>
+            </select>
+          </div>
+        
+        </div>
+        <!-- /Products Filter -->
+      
+        <!-- Row -->
+        <div class="product-grid row grid-20 mgb-20">
+          
+          <% @items.each do |item| %>
+          <!-- Col -->
+          <div class="col-sm-6 col-md-4">
+          
+            <%= render 'pages/single_item', item: item %>
+          
+          </div>
+          <!-- /Col -->
+          
+        <% end %>
+
+        </div>
+        <!-- /Row -->
+        
+        <!-- Pagination -->
+        <ul class="pagination">
+          <li><a href="#">&laquo;</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">&raquo;</a></li>
+        </ul>
+        <!-- /Pagination -->
+        
+      </div>
+      <!-- /Main Col -->
+
+    </div>
+    <!-- /Row -->
+  
+  </div>
+  <!-- /Container -->
+  
+</section>
+<!-- /Content Block
+============================================-->
+
+<!-- Info Block
+============================================ -->
+<div class="info-block page-bg overlay-dark boxed-section">
+
+  <!-- Container -->
+  <div class="container">
+  
+    <!-- Row -->
+    <div class="row">
+      <!-- Col -->
+      <div class="col-md-3 hidden-xs hidden-sm">
+        <span class="text case-u"><i class="ti ti-comments icon-left"></i>live chat</span>
+      </div>
+      <!-- Col -->
+      
+      <!-- Col -->
+      <div class="col-md-6">
+        <span class="text case-u align-center">enjoy free <a href="#">delivery</a> for any <a href="#">orders</a> within the city</span>
+      </div>
+      <!-- Col -->
+      
+      <!-- Col -->
+      <div class="col-md-3 hidden-xs hidden-sm">
+        <span class="text case-u pull-right"><i class="ti-headphone-alt icon-left"></i><b class="visible-lg-inline">support : </b>+(254) 560 400 333</span>
+      </div>
+      <!-- /Col -->
+      
+    </div>
+    <!-- /Row -->
+  </div>
+  <!-- /Container -->
+
+</div>
+<!-- /Info Block
+=================================================== -->

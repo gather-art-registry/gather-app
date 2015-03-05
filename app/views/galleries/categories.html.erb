@@ -6,7 +6,7 @@
         <div class="container">     
           <!-- Section Title -->
           <div class="section-title invert-colors no-margin-b">
-            <h2>category title</h2>
+            <h2>All Categories</h2>
             <p class="hidden-xs">Helena is a freelance fashion house specialiasing in print designs and combining fabrics. Our stores can be found all over the world.</p>
           </div>
           <!-- /Section Title -->
@@ -109,8 +109,6 @@
                     </div>
                     <!-- Image -->
                     
-                    <span class="label label-sale">sale</span>
-                    
                     <!-- Details -->
                     <div class="details">
                     
@@ -121,14 +119,13 @@
                       
                       <!-- Price Box -->
                       <div class="price-box">
-                        <span class="price">Number of Items: </span>
+                        <span class="price">Number of Pieces: </span>
                       </div>
                       <!-- /Price Box -->
                       
                       <!-- buttons -->
                       <div class="btn-group">
-                        <a class="btn btn-outline btn-base-hover" href="cart.html">add to cart</a>	
-                        <a class="btn btn-outline btn-default-hover" href="product.html"><i class="icon fa fa-heart"></i></a>
+                        <%= link_to "view gallery", gallery_path(category.id), class: "btn btn-outline btn-base-hover" %>
                       </div> 
                       <!-- /buttons -->
                       

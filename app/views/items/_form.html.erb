@@ -1,4 +1,4 @@
-<%= form_for @item, url: artist_item_helper(@artist, @item), html: {class: "form-horizontal"} do |f| %>
+<%= form_for @item, html: {class: "form-horizontal"} do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -17,19 +17,26 @@
     <%= f.text_field :name, class: "form-control" %>
     </div>
   </div>
-
-    <%= f.hidden_field :artist_id, value: @artist.id %>
-
+  <div class="form-group">
+    <%= f.label :artist, class: "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+    <%= f.collection_select :artist_id, Artist.all, :id, :primary_identifier, id: 'artist', include_blank: true, data: { placeholder: "Choose an Artist"}  %>
+    </div>
+  </div>
   <div class="form-group">
     <%= f.label :category, class: "col-sm-3 control-label" %>
     <div class="col-sm-9">
-    <%= collection_check_boxes(:item_category, :category_id, Category.all, :id, :name) %>
+    <%= collection_check_boxes(:item, :item_category_ids, Category.all, :id, :name) do |b| %>
+      <%= b.label(:"data-value" => b.value) { b.check_box + "  " + b.text } %><br>
+    <% end %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :medium, class: "col-sm-3 control-label" %>
     <div class="col-sm-9">
-    <%= collection_check_boxes(:item_medium, :medium_id, Medium.all, :id, :name) %>
+    <%= collection_check_boxes(:item, :item_medium_ids, Medium.all, :id, :name) do |b| %>
+      <%= b.label(:"data-value" => b.value) { b.check_box + "  " + b.text } %><br>
+    <% end %>
     </div>
   </div>
   <div class="form-group">

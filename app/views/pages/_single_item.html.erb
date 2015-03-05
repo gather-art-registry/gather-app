@@ -1,17 +1,14 @@
-<!-- Col -->
-<div class="col-sm-6 col-md-4">
-
   <!-- product -->
   <div class="product clearfix">
   
     <!-- Image -->
     <div class="image"> 
-      <%= image_tag item.image_1, class: "main", alt: "" %>
+      <%= image_tag item.image_1.try(:small), class: "main", alt: "" %>
       <ul class="additional">
-        <li><%= image_tag item.image_1 %></li>
-        <li><%= image_tag item.image_2 %></li>
-        <li><%= image_tag item.image_3 %></li>
-        <li><%= image_tag item.image_4 %></li>
+        <li><%= image_tag item.image_1.try(:thumb) %></li>
+        <li><%= image_tag item.image_2.try(:thumb) %></li>
+        <li><%= image_tag item.image_3.try(:thumb) %></li>
+        <li><%= image_tag item.image_4.try(:thumb) %></li>
       </ul>
     </div>
     <!-- Image -->
@@ -42,6 +39,3 @@
     
   </div>
   <!-- /product -->
-
-</div>
-<!-- /Col -->

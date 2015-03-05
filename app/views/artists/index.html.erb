@@ -102,7 +102,7 @@
                 <td><%= image_tag artist.image, class: "img-circle", alt: "" %></td>
                 <ul class="additional">
                   <% artist.items.take(4).each do |item| %>
-                  <li><%= image_tag item.image_1 %></li>
+                  <li><%= image_tag item.image_1.try(:thumb) %></li>
                   <% end %>
                 </ul>
               </div>
@@ -137,53 +137,6 @@
           </div>
           <!-- /Col -->
           <% end %>
-          
-          <!-- Col -->
-          <div class="col-sm-6 col-md-4">
-          
-            <!-- product -->
-            <div class="product clearfix">
-            
-              <!-- Image -->
-              <div class="image"> 
-                <a href="product.html" class="main"><img src="images/products/product2.jpg" alt=""></a>
-                <ul class="additional">
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                </ul>
-              </div>
-              <!-- Image -->
-              
-              <!-- Details -->
-              <div class="details">
-              
-                <a class="title" href="product.html">Black lase blouse</a>
-                
-                <p class="desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
-                
-                <!-- Price Box -->
-                <div class="price-box">
-                  <span class="price">$2600</span>
-                </div>
-                <!-- /Price Box -->
-                
-                <!-- buttons -->
-                <div class="btn-group">
-                  <a class="btn btn-outline btn-base-hover" href="cart.html">add to cart</a>  
-                  <a class="btn btn-outline btn-default-hover" href="product.html"><i class="icon fa fa-heart"></i></a>
-                </div> 
-                <!-- /buttons -->
-                
-              </div>
-              <!-- /Details -->
-              
-            </div>
-            <!-- /product -->
-          
-          </div>
-          <!-- /Col -->
 
         </div>
         <!-- /Row -->
@@ -203,73 +156,7 @@
       </div>
       <!-- /Main Col -->
       
-      <!-- Side Col -->
-      <div class="side-col col-sm-3 col-md-3">
-
-        <!-- Side Widget -->
-        <div class="side-widget no-margin-l">
-        
-          <h5 class="boxed-title">sub categories</h5>
-          
-          <!-- ul-toggle -->
-          <ul class="ul-toggle font-size-sm">
-            <li><a href="#"><i class="icon fa fa-angle-right"></i>Handbags</a><i class="toggler ti ti-plus"></i>
-              <ul>
-                <li><a href="#"><i class="icon fa fa-angle-right"></i>Dresses</a></li>
-                <li><a href="#"><i class="icon fa fa-angle-right"></i>Shoes</a></li>
-                <li><a href="#"><i class="icon fa fa-angle-right"></i>Sun Glasses</a></li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="icon fa fa-angle-right"></i>Shoes</a><i class="toggler ti ti-plus"></i>
-              <ul>
-                <li><a href="#"><i class="icon fa fa-angle-right"></i>Dresses</a></li>
-                <li><a href="#"><i class="icon fa fa-angle-right"></i>Shoes</a></li>
-                <li><a href="#"><i class="icon fa fa-angle-right"></i>Sun Glasses</a></li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="icon fa fa-angle-right"></i>Dresses</a><i class="toggler ti ti-plus"></i>
-              <ul>
-                <li><a href="#"><i class="icon fa fa-angle-right"></i>Dresses</a></li>
-                <li><a href="#"><i class="icon fa fa-angle-right"></i>Shoes</a></li>
-                <li><a href="#"><i class="icon fa fa-angle-right"></i>Sun Glasses</a></li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="icon fa fa-angle-right"></i>Sun Glasses</a></li>
-            <li><a href="#"><i class="icon fa fa-angle-right"></i>Hair Products</a></li>
-          </ul>
-          <!-- /ul-toggle -->
-    
-        </div>
-        <!-- /Side Widget -->
-        
-
-        
-        <!-- Side Widget -->
-        <div class="side-widget no-margin-l">
-        
-          <h5 class="boxed-title">price filter</h5>
-          
-          <!-- Price Range Form -->
-          <form class="side-form-panel">
-            <label>Min Price</label>
-            <div class="form-group slider-group">
-              <div class="slider-ctrl" data-call="jui-slider" data-target="#min1" data-options="{min:0, max:1000, value:500}"></div>
-              <input id="min1" class="form-control" value="500" type="text">
-            </div>              
-            <label>Max Price</label>
-            <div class="form-group slider-group">
-              <div class="slider-ctrl" data-call="jui-slider" data-target="#max1" data-options="{min:0, max:1000, value:500}"></div>
-              <input id="max1" class="form-control" value="500" type="text">
-            </div>  
-            <button class="btn btn-outline btn-block">submit</button>
-          </form>
-          <!-- /Price Range Form -->
-        
-        </div>
-        <!-- /Side Widget -->
-
-      </div>
-      <!-- /Side Col -->
+      <%= render "side_bar" %>
 
     </div>
     <!-- /Row -->

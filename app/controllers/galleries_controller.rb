@@ -4,6 +4,7 @@ class GalleriesController < ApplicationController
   respond_to :html
 
   def index
+    @items = Item.all
     @galleries = Gallery.all
     respond_with(@galleries)
   end
@@ -13,6 +14,7 @@ class GalleriesController < ApplicationController
   end
 
   def show
+    @items = Item.all
     respond_with(@gallery)
   end
 

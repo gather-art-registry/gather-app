@@ -20,9 +20,21 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  version :thumb do
+  version :full_size do
+    process resize_to_fill: [600, 600]
+  end
+
+  version :small, :from_version => :small do
+    process resize_to_fill: [350, 350]
+  end
+
+  version :thumb, :from_version => :small do
     process resize_to_fill: [200, 200]
   end
+
+  
+
+  
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
