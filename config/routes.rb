@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :contents
+
   # scope module: 'admin' do
   #   resources :artists do
   #     resources :items, shallow: true
@@ -33,6 +35,9 @@ Rails.application.routes.draw do
   get 'pages/terms_of_service'
   get 'pages/privacy_policy'
   get 'pages/contact_us'
+  get 'pages/team'
+  get 'pages/become_an_artist'
+  get 'pages/using_gather'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
