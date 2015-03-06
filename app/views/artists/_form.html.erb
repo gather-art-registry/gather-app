@@ -41,7 +41,9 @@
           <div class="form-group">
             <%= f.label :medium, class: "col-sm-3 control-label" %>
             <div class="col-sm-8">
-            <%= collection_check_boxes(:artist_medium, :medium_id, Medium.all, :id, :name) %>
+            <%= collection_check_boxes(:artist_medium, :medium_id, Medium.all, :id, :name) do |b| %>
+              <%= b.label(:"data-value" => b.value) { b.check_box + "  " + b.text } %><br>
+            <% end %>
             </div>
           </div>
           <div class="form-group">
@@ -59,7 +61,7 @@
           <div class="form-group">
             <%= f.label :image, class: "col-sm-3 control-label" %>
             <div class="col-sm-8">
-            <%= image_tag(@image.image_url) if @image.image? %>
+            <%= image_tag(@artist.image_url) if @artist.image? %><br>
             <%= f.file_field :image %>
             </div>
           </div>
@@ -191,13 +193,12 @@
     </div>
     <!-- /Panel -->
     <br />
-     <div class="form-group">
-      <%= f.label :submit, class: "col-sm-3 control-label" %>
-      <div class="col-sm-8">
-      <%= f.submit class: "btn btn-primary btn-block" %>
-      </div>
+   <div class="form-group">
+    <%= f.label :submit, class: "col-sm-3 control-label" %>
+    <div class="col-sm-8">
+    <%= f.submit class: "btn btn-primary btn-block" %>
     </div>
-    <% end %>
   </div>
+  <% end %>
 </div>
  
