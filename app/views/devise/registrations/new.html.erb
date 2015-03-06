@@ -1,52 +1,65 @@
-<div class="row">
-  <div class="col-lg-8 col-md-8 col-lg-offset-1 col-md-offset-1">
-    <div class="form-panel">
-      <h3 class="cs-heading">Sign up</h3>
+<!-- Empty Block (use .abs-filler to fill page)
+================================================== -->
+<div class="empty-block abs-filler">
+  <!-- Vcenter -->
+  <div class="vcenter">
+    <div class="vcenter-this">
+      <!-- Container -->
+      <div class="container">
+        <!-- Form Panel -->
+        <div class="form-panel width-40pc width-100pc-xs hcenter">
+          <header>Sign Up</header>
+          <fieldset>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal"} ) do |f| %>
-        <%= devise_error_messages! %>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal"} ) do |f| %>
+              <%= devise_error_messages! %>
 
-        <div class="form-group">
-          <%= f.label :username, class: "col-sm-3 control-label" %>
-          <div class="col-sm-9">
-            <%= f.text_field :username, autofocus: true, class: "form-control", placeholder: "Enter your username" %>
-          </div>
-        </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                <%= f.text_field :username, autofocus: true, class: "form-control", placeholder: "Enter your username" %>
+              </div>
+            </div>
 
-        <div class="form-group">
-          <%= f.label :email, class: "col-sm-3 control-label" %>
-          <div class="col-sm-9">
-          <%= f.email_field :email, class: "form-control", placeholder: "Enter your email" %>
-          </div>
-        </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+              <%= f.email_field :email, class: "form-control", placeholder: "Enter your email" %>
+              </div>
+            </div>
 
-        <div class="form-group">
-          <%= f.label :password, class: "col-sm-3 control-label" %>
-          <div class="col-sm-9">
-          <% if @validatable %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+              <% if @validatable %>
+              <% end %>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Enter your password (8 char min)" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Enter your password again" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.submit "Sign up", class: "btn btn-default btn-block" %>
+              </div>
+            </div>
           <% end %>
-          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Enter your password" %>
-          </div>
+          </fieldset>
         </div>
-
-        <div class="form-group">
-          <%= f.label :password_confirmation, class: "col-sm-3 control-label" %>
-          <div class="col-sm-9">
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Enter your password again" %>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :submit, class: "col-sm-3 control-label" %>
-          <div class="col-sm-9">
-          <%= f.submit "Sign up", class: "btn btn-primary btn-block" %>
-          </div>
-        </div>
-      <% end %>
-      <%= render "devise/shared/links" %>
+        <div class="align-center">Already have an Account?  <%= render "devise/shared/links" %></div>
+      </div>
+      <!-- /Container -->
     </div>
+    <!-- /Vcenter this -->
   </div>
+  <!-- /Vcenter -->
 </div>
+<!-- /Empty Block
+================================================== -->
 
 

@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def about
+    @content = Content.where(page: "About Gather")
   end
 
   def terms_of_us
@@ -16,5 +17,16 @@ class PagesController < ApplicationController
 
   def contact_us
   end
-  
+
+  def team
+  end
+
+  def become_an_artist
+    @content = Content.where(page: "About Becoming a Gather Artist")
+  end
+
+  def using_gather
+    @content = Content.where(page: "About Using Gather")
+  end
+
 end

@@ -230,27 +230,27 @@
 }
 
 .cover-1-bg {
-  background: url("../../images/backgrounds/cover1.jpg") no-repeat center 0 fixed;
+  background: url("backgrounds/cover1.jpg") no-repeat center 0 fixed;
 }
 
 .cover-2-bg {
-  background: url("../../images/backgrounds/cover2.jpg") no-repeat center 0 fixed;
+  background: url("backgrounds/cover2.jpg") no-repeat center 0 fixed;
 }
 
 .cover-3-bg {
-  background: url("../../images/backgrounds/cover3.jpg") no-repeat center 0 fixed;
+  background: url("backgrounds/cover3.jpg") no-repeat center 0 fixed;
 }
 
 .cover-4-bg {
-  background: url("../../images/backgrounds/cover4.jpg") no-repeat center 0 fixed;
+  background: url("backgrounds/cover4.jpg") no-repeat center 0 fixed;
 }
 
 .page-bg {
-  background: url("../../images/backgrounds/cover2.jpg") no-repeat center 0 fixed;
+  background: url("backgrounds/cover2.jpg") no-repeat center 0 fixed;
 }
 
 .tile-1-bg {
-  background: url("../../images/backgrounds/tile1.png") repeat center 0 fixed;
+  background: url("tile1.png") repeat center 0 fixed;
 }
 
 /* UTILITY CLASSES

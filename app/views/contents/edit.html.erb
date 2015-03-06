@@ -1,6 +1,37 @@
-<h1>Editing content</h1>
+<!-- Content Block
+============================================-->
+<section class="content-block default-bg">
 
-<%= render 'form' %>
+  <!-- Container -->
+  <div class="container no-pad-t">
 
-<%= link_to 'Show', @content %> |
-<%= link_to 'Back', contents_path %>
+    <!-- Row -->
+    <div class="row">
+
+      <!-- Main Col -->
+      <div class="main-col col-sm-9 col-md-9 mgb-30-xs">
+      
+        <h4>Edit Content</h4>
+        
+        <!-- Accordion -->
+
+		<%= render 'form' %>
+
+		<%= link_to 'Show', @content %> |
+		<%= link_to 'Back', contents_path %>
+        <!-- /Accordion -->
+        
+      </div>
+      <!-- /Main Col -->
+
+	<%= render 'pages/admin_side_bar' %>
+		
+	</div>
+    <!-- /Row -->
+  
+  </div>
+  <!-- /Container -->
+  
+</section>
+<!-- /Content Block
+============================================-->

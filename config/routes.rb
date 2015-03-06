@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'categories' => 'galleries#categories'
   get 'registries' => 'registries#admin_index'
 
+  devise_for :users
   resources :items
   resources :artists
 
@@ -25,10 +26,6 @@ Rails.application.routes.draw do
   resources :registries do
     resources :items
   end
-
-  devise_for :users
-  
-  
 
   root 'pages#home'
   get 'pages/about'

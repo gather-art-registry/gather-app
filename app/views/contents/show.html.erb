@@ -1,24 +1,72 @@
-<p id="notice"><%= notice %></p>
+<!-- Content Block
+============================================-->
+<section class="content-block default-bg">
 
-<p>
-  <strong>Title:</strong>
-  <%= @content.title %>
-</p>
+  <!-- Container -->
+  <div class="container no-pad-t">
 
-<p>
-  <strong>Body:</strong>
-  <%= @content.body %>
-</p>
+    <!-- Row -->
+    <div class="row">
 
-<p>
-  <strong>Order:</strong>
-  <%= @content.order %>
-</p>
+      <!-- Main Col -->
+      <div class="main-col col-sm-9 col-md-9 mgb-30-xs">
+      	<h4>Content for <%= @content.page %></h4>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4 class="panel-title">Content</h4>
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped">
+      
+	        <h4>New Item</h4>
+	        
+	        <!-- Accordion -->
+	        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Page:</strong>
-  <%= @content.page %>
-</p>
+			<p>
+			  <strong>Title:</strong>
+			  <%= @content.title %>
+			</p>
 
-<%= link_to 'Edit', edit_content_path(@content) %> |
-<%= link_to 'Back', contents_path %>
+			<p>
+			  <strong>Body:</strong>
+			  <%= @content.body %>
+			</p>
+
+			<p>
+			  <strong>Order:</strong>
+			  <%= @content.order %>
+			</p>
+
+			<p>
+			  <strong>Page:</strong>
+			  <%= @content.page %>
+			</p>
+
+			<%= link_to 'Edit', edit_content_path(@content) %> |
+			<%= link_to 'Back', contents_path %>
+	        
+	        <!-- /Accordion -->
+	        </table>
+
+            <br>
+
+            <%= link_to 'New Content', new_content_path %>
+          </div>
+        </div>
+              
+        
+      </div>
+      <!-- /Main Col -->
+
+	<%= render 'pages/admin_side_bar' %>
+		
+	</div>
+    <!-- /Row -->
+  
+  </div>
+  <!-- /Container -->
+  
+</section>
+<!-- /Content Block
+============================================-->
