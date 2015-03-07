@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @registry = @user.registries.first
     respond_with(@user)
   end
 

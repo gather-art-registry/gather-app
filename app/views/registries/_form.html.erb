@@ -1,4 +1,4 @@
-<%= form_for @registry, url: user_registries_path(user_id: @user.id), html: {class: "form-horizontal"} do |f| %>
+<%= form_for @registry, url: user_registry_helper(@user, @registry), html: {class: "form-horizontal"} do |f| %>
   <% if @registry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@registry.errors.count, "error") %> prohibited this registry from being saved:</h2>
