@@ -17,13 +17,14 @@
     <div class="details">
     
       <%= link_to item.name, item_path(item.id), class: "title" %>
+      <p>Artist: <%= link_to item.artist.primary_identifier, artist_path(item.artist_id) %></p>
       
       
-      <p class="desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
+      <p class="desc"><%= item.description %></p>
       
       <!-- Price Box -->
       <div class="price-box">
-        <span class="price">Number of Items: <%= item.quantity %></span>
+        <span class="price"><%= number_to_currency(item.price) %></span>
       </div>
       <!-- /Price Box -->
       
