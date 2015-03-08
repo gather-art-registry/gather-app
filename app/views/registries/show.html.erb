@@ -8,8 +8,9 @@
     <!-- Breadcrumb -->
     <ol class="breadcrumb pull-left">
       <li><a href="#"><i class="ti ti-home"></i></a></li>
-      <li><a href="#">Pages</a></li>
-      <li class="active">features</li>
+      <li><a href="#">Registries</a></li>
+      <li><%= link_to @user.username, user_path(@user.id) %></li>
+      <li class="active"><%= @registry.type_of_event %></li>
     </ol>
     <!-- /Breadcrumb --> 
 
@@ -39,14 +40,12 @@
     <div class="row">
 
       <!-- Main Col -->
-      <div class="main-col col-sm-9 col-md-9">
+      <div class="main-col col-sm-8 col-md-8">
       
         <!-- Categ Slider -->
         <div class="categ-slider bx-pager-bottom-right mgb-20">
           <ul class="bxslider" data-call="bxslider" data-options="{controls:false}">
-            <li><img src="images/slides/slide1-text.jpg" alt=""/></li>
-            <li><img src="images/slides/slide2-text.jpg" alt=""/></li>
-            <li><img src="images/slides/slide3-text.jpg" alt=""/></li>
+            <li><%= image_tag @registry.image.full_size, alt: "registry image" %></li>
           </ul>
         </div>
         <!-- /Categ Slider -->
@@ -137,52 +136,6 @@
 
         <% end %>
           
-          <!-- Col -->
-          <div class="col-sm-6 col-md-4">
-          
-            <!-- product -->
-            <div class="product clearfix">
-            
-              <!-- Image -->
-              <div class="image"> 
-                <a href="product.html" class="main"><img src="images/products/product2.jpg" alt=""></a>
-                <ul class="additional">
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                </ul>
-              </div>
-              <!-- Image -->
-              
-              <!-- Details -->
-              <div class="details">
-              
-                <a class="title" href="product.html">Item Name</a>
-                
-                <p class="desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
-                
-                <!-- Price Box -->
-                <div class="price-box">
-                  <span class="price">Number of Items: #</span>
-                </div>
-                <!-- /Price Box -->
-                
-                <!-- buttons -->
-                <div class="btn-group">
-                  <a class="btn btn-outline btn-base-hover" href="cart.html">add to cart</a>  
-                  <a class="btn btn-outline btn-default-hover" href="product.html"><i class="icon fa fa-heart"></i></a>
-                </div> 
-                <!-- /buttons -->
-                
-              </div>
-              <!-- /Details -->
-              
-            </div>
-            <!-- /product -->
-          
-          </div>
-          <!-- /Col -->
 
         </div>
         <!-- /Row -->
@@ -202,7 +155,7 @@
       </div>
       <!-- /Main Col -->
       
-      <%= render "side_bar" %>
+      <%= render "pages/side_bar" %>
 
     </div>
     <!-- /Row -->
@@ -213,39 +166,3 @@
 </section>
 <!-- /Content Block
 ============================================-->
-
-<!-- Info Block
-============================================ -->
-<div class="info-block page-bg overlay-dark boxed-section">
-
-  <!-- Container -->
-  <div class="container">
-  
-    <!-- Row -->
-    <div class="row">
-      <!-- Col -->
-      <div class="col-md-3 hidden-xs hidden-sm">
-        <span class="text case-u"><i class="ti ti-comments icon-left"></i>live chat</span>
-      </div>
-      <!-- Col -->
-      
-      <!-- Col -->
-      <div class="col-md-6">
-        <span class="text case-u align-center">enjoy free <a href="#">delivery</a> for any <a href="#">orders</a> within the city</span>
-      </div>
-      <!-- Col -->
-      
-      <!-- Col -->
-      <div class="col-md-3 hidden-xs hidden-sm">
-        <span class="text case-u pull-right"><i class="ti-headphone-alt icon-left"></i><b class="visible-lg-inline">support : </b>+(254) 560 400 333</span>
-      </div>
-      <!-- /Col -->
-      
-    </div>
-    <!-- /Row -->
-  </div>
-  <!-- /Container -->
-
-</div>
-<!-- /Info Block
-=================================================== -->

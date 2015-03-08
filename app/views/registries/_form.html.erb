@@ -48,6 +48,13 @@
     </div>
   </div>
   <div class="form-group">
+    <%= f.label :image, class: "col-sm-3 control-label" %>
+    <div class="col-sm-8">
+    <%= image_tag(@registry.image_url) if @registry.image? %><br>
+    <%= f.file_field :image %>
+    </div>
+  </div>
+  <div class="form-group">
     <%= f.label :notes, class: "col-sm-3 control-label" %>
     <div class="col-sm-8">
     <%= f.text_area :notes, class: "form-control" %>

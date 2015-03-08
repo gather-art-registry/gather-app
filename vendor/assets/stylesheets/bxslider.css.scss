@@ -3,20 +3,19 @@
 $bx-pager-sizes:(
   default:(
     active: false,
-    size:12px,
-    offset: 20px,
-  ),
-  // your own sizes here
+    size: 12px,
+    offset: 20px
+  ),  
 );
 
 $bx-control-sizes:(
   default:(
     active: false,
-    size:35px,
-    offset: 20px,
+    size: 35px,
+    offset: 20px
   ),
   // your own sizes here
-);
+); 
 
 $bx-control-default: map-get($bx-control-sizes, default);
 $bx-pager-default: map-get($bx-pager-sizes, default);

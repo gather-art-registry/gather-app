@@ -15,8 +15,9 @@ class RegistriesController < ApplicationController
   end
 
   def show
+    @last_items = Item.take(3)
     @items = @registry.items.all
-    respond_with(@registry)
+    respond_with(@user, @registry)
   end
 
   def new
@@ -30,13 +31,12 @@ class RegistriesController < ApplicationController
   def create
     @registry = Registry.new(registry_params)
 
-    redirect_to action: show, id: @registry.id, user_id: @user.id and return if @registry.save
-    render :new 
+    respond_with(@user, @registry) 
   end
 
   def update
     @registry.update(registry_params)
-    respond_with(@registry)
+    respond_with(@user, @registry)
   end
 
   def destroy
@@ -54,6 +54,7 @@ class RegistriesController < ApplicationController
     end
 
     def registry_params
-      params.require(:registry).permit(:type_of_event, :event_date, :registry_close_date, :story, :event_website, :delivery_instructions, :notes, :publish, :user_id)
+      params.require(:registry).permit(:type_of_event, :event_date, :registry_close_date, :story, 
+        :event_website, :delivery_instructions, :notes, :publish, :user_id, :image)
     end
 end
