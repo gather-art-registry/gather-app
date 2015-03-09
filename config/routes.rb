@@ -24,7 +24,10 @@ Rails.application.routes.draw do
   end
 
   resources :registries do
-    resources :items
+    resources :items do
+      post 'create' => 'items#add_item'
+      post 'destroy' => 'items#remove_item'
+    end
   end
 
   root 'pages#home'

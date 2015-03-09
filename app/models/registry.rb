@@ -8,4 +8,9 @@ class Registry < ActiveRecord::Base
 
   validates :type_of_event, presence: true
   validates :user_id, presence: true
+
+  def registry_id
+  	self.id
+  end
+
 end

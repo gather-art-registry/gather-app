@@ -1,6 +1,6 @@
 class RegistriesController < ApplicationController
   before_action :set_registry, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, except: :admin_index
+  before_action :set_user, except: [:admin_index, :add_item, :remove_item]
 
   respond_to :html
 
@@ -42,6 +42,20 @@ class RegistriesController < ApplicationController
   def destroy
     @registry.destroy
     respond_with(@registry)
+  end
+
+  def add_item
+    @registry = Registry.find(params[:registry_id])
+    @user = @registry.user
+    @registry_item = @registry.registry_items.create!(item_id: params[:item_id])
+    respond_with(@user, @registry)
+  end
+
+  def remove_item
+    @registry = Registry.find(params[:registry_id])
+    @user = @registry.user
+    @registry_item = @registry.registry_items.find(item_id: params[:item_id])
+    respond_with(@user, @registry)
   end
 
   private
