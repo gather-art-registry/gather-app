@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get 'pages/team'
   get 'pages/become_an_artist'
   get 'pages/using_gather'
+  get 'pages/mission'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

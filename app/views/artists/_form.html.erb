@@ -41,7 +41,7 @@
           <div class="form-group">
             <%= f.label :medium, class: "col-sm-3 control-label" %>
             <div class="col-sm-8">
-            <%= collection_check_boxes(:artist_medium, :medium_id, Medium.all, :id, :name) do |b| %>
+            <%= f.collection_check_boxes :medium_ids, Medium.all, :id, :name do |b| %>
               <%= b.label(:"data-value" => b.value) { b.check_box + "  " + b.text } %><br>
             <% end %>
             </div>

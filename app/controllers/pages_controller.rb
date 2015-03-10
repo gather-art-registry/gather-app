@@ -21,6 +21,9 @@ class PagesController < ApplicationController
   def team
   end
 
+  def mission
+  end
+
   def become_an_artist
     @content = Content.where(page: "About Becoming a Gather Artist")
   end

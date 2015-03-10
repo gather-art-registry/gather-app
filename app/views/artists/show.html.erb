@@ -7,7 +7,7 @@
     <!-- Section Title -->
     <div class="section-title invert-colors no-margin-b">
       <h2><%= @artist.primary_identifier %></h2>
-      <p class="hidden-xs">Helena is a freelance fashion house specialiasing in print designs and combining fabrics. Our stores can be found all over the world.</p>
+      <p class="hidden-xs"><%= @artist.artist_bio %></p>
     </div>
     <!-- /Section Title -->
   </div>
@@ -26,20 +26,13 @@
 
     <!-- Breadcrumb -->
     <ol class="breadcrumb pull-left">
-      <li><a href="#"><i class="ti ti-home"></i></a></li>
-      <li><a href="#">Pages</a></li>
-      <li><a href="#">other</a></li>
-      <li class="active">blog</li>
+      <li><%= link_to "<i class='icon-left ti ti-home'></i>".html_safe, root_path %></li>
+      <li><%= link_to "All Artists", artists_path %></li>
+      <li class="active"><%= @artist.primary_identifier %></li>
     </ol>
     <!-- /Breadcrumb --> 
 
-    <!-- hlinks -->
-    <ul class="page-links pull-right hlinks hlinks-icons color-icons-borders color-icons-bg-hovered">
-      <li><a href="#"><i class="icon fa fa-facebook"></i></a></li>
-      <li><a href="#"><i class="icon fa fa-twitter"></i></a></li>
-      <li><a href="#"><i class="icon fa fa-rss"></i></a></li>
-    </ul>
-    <!-- /hlinks -->
+    <%= render "pages/social_links" %>
 
   </div>
   <!-- /Container -->
@@ -59,13 +52,14 @@
     <div class="row">
 
       <!-- Main Col -->
-      <div class="main-col col-sm-8 col-md-8 mgb-30-xs">
+      <div class="main-col col-sm-9 col-md-9 mgb-30-xs">
       
         <h4>Artist Statement</h4>
         <p>
           <%= image_tag @artist.image, size: "250x250", class: "img-circle pull-right" %>
           <%= @artist.artist_statement %>
         </p>
+        <p><strong>Media:</strong> <%= @artist.media.map(&:name) %></p>
         
        <!-- Nested Row -->
         <div class="row">
@@ -122,9 +116,6 @@
         </div>
         <!-- /Nested Row -->
         
-        <h4>Artist Bio</h4>
-          <p><%= @artist.artist_bio %></p>
-        
         <div class="well">
           <p id="notice"><%= notice %></p>
 
@@ -149,7 +140,7 @@
       </div>
       <!-- /Main Col -->
       
-      <%= render "side_bar" %>
+      <%= render "pages/side_bar" %>
 
     </div>
     <!-- /Row -->
@@ -216,53 +207,6 @@
           <!-- /Col -->
           
         <% end %>
-          
-          <!-- Col -->
-          <div class="col-sm-6 col-md-3">
-          
-            <!-- product -->
-            <div class="product clearfix">
-            
-              <!-- Image -->
-              <div class="image"> 
-                <a href="product.html" class="main"><img src="images/products/product2.jpg" alt=""></a>
-                <ul class="additional">
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                  <li><a href="images/products/product2.jpg" data-gal="prettyPhoto[gallery 2]" title="Product Name"><img src="images/products/product2.jpg" alt=""></a></li>
-                </ul>
-              </div>
-              <!-- Image -->
-              
-              <!-- Details -->
-              <div class="details">
-              
-                <a class="title" href="product.html">Item Name</a>
-                
-                <p class="desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates.</p>
-                
-                <!-- Price Box -->
-                <div class="price-box">
-                  <span class="price">Number of Items: #</span>
-                </div>
-                <!-- /Price Box -->
-                
-                <!-- buttons -->
-                <div class="btn-group">
-                  <a class="btn btn-outline btn-base-hover" href="cart.html">add to cart</a>  
-                  <a class="btn btn-outline btn-default-hover" href="product.html"><i class="icon fa fa-heart"></i></a>
-                </div> 
-                <!-- /buttons -->
-                
-              </div>
-              <!-- /Details -->
-              
-            </div>
-            <!-- /product -->
-          
-          </div>
-          <!-- /Col -->
 
         </div>
         <!-- /Row -->

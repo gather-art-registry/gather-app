@@ -26,7 +26,7 @@
   <div class="form-group">
     <%= f.label :category, class: "col-sm-3 control-label" %>
     <div class="col-sm-9">
-    <%= collection_check_boxes(:item, :item_category_ids, Category.all, :id, :name) do |b| %>
+    <%= collection_check_boxes(:item, :category_ids, Category.all, :id, :name) do |b| %>
       <%= b.label(:"data-value" => b.value) { b.check_box + "  " + b.text } %><br>
     <% end %>
     </div>
@@ -34,7 +34,7 @@
   <div class="form-group">
     <%= f.label :medium, class: "col-sm-3 control-label" %>
     <div class="col-sm-9">
-    <%= collection_check_boxes(:item, :item_medium_ids, Medium.all, :id, :name) do |b| %>
+    <%= collection_check_boxes(:item, :medium_ids, Medium.all, :id, :name) do |b| %>
       <%= b.label(:"data-value" => b.value) { b.check_box + "  " + b.text } %><br>
     <% end %>
     </div>

@@ -3,13 +3,7 @@
   
     <!-- Image -->
     <div class="image"> 
-      <%= image_tag item.image_1.try(:small), class: "main", alt: "" %>
-      <ul class="additional">
-        <li><%= image_tag item.image_1.try(:thumb) %></li>
-        <li><%= image_tag item.image_2.try(:thumb) %></li>
-        <li><%= image_tag item.image_3.try(:thumb) %></li>
-        <li><%= image_tag item.image_4.try(:thumb) %></li>
-      </ul>
+      <%= link_to (image_tag item.image_1.try(:small)), item_path(item.id), class: "main", alt: "" %>
     </div>
     <!-- Image -->
 

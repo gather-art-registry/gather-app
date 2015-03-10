@@ -31,7 +31,7 @@
               <tbody>
                 <% @registries.each do |registry| %>
                   <tr>
-                    <td><%= registry.type_of_event %></td>
+                    <td><%= link_to registry.type_of_event, user_registry_path(id: registry.id, user_id: registry.user.id) %></td>
                     <td><%= registry.event_date %></td>
                     <td><%= registry.registry_close_date %></td>
                     <td><%= registry.publish %></td>

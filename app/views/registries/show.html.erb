@@ -7,20 +7,14 @@
 
     <!-- Breadcrumb -->
     <ol class="breadcrumb pull-left">
-      <li><a href="#"><i class="ti ti-home"></i></a></li>
+      <li><%= link_to "<i class='icon-left ti ti-home'></i>".html_safe, root_path %></li>
       <li><a href="#">Registries</a></li>
       <li><%= link_to @user.username, user_path(@user.id) %></li>
       <li class="active"><%= @registry.type_of_event %></li>
     </ol>
     <!-- /Breadcrumb --> 
 
-    <!-- hlinks -->
-    <ul class="page-links pull-right hlinks hlinks-icons color-icons-borders color-icons-bg-hovered">
-      <li><a href="#"><i class="icon fa fa-facebook"></i></a></li>
-      <li><a href="#"><i class="icon fa fa-twitter"></i></a></li>
-      <li><a href="#"><i class="icon fa fa-rss"></i></a></li>
-    </ul>
-    <!-- /hlinks -->
+    <%= render "pages/social_links" %>
 
   </div>
   <!-- /Container -->
@@ -45,7 +39,7 @@
         <!-- Categ Slider -->
         <div class="categ-slider bx-pager-bottom-right mgb-20">
           <ul class="bxslider" data-call="bxslider" data-options="{controls:false}">
-            <li><%= image_tag @registry.image.full_size, alt: "registry image" %></li>
+            <li><%= image_tag @registry.image, alt: "registry image" %></li>
           </ul>
         </div>
         <!-- /Categ Slider -->

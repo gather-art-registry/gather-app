@@ -15,7 +15,6 @@ class RegistriesController < ApplicationController
   end
 
   def show
-    @last_items = Item.take(3)
     @items = @registry.items.all
     respond_with(@user, @registry)
   end
