@@ -25,8 +25,8 @@ Rails.application.routes.draw do
 
   resources :registries do
     resources :items do
-      post 'create' => 'items#add_item'
-      post 'destroy' => 'items#remove_item'
+      post 'add_item' => 'registries#add_item'
+      post 'remove_item' => 'registries#remove_item'
     end
   end
 

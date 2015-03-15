@@ -25,4 +25,5 @@ class Item < ActiveRecord::Base
   mount_uploader :image_4, ImageUploader
 
   validates :name, presence: true
+  validates :artist_id, presence: true
 end

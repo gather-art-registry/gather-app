@@ -7,7 +7,7 @@
     </div>
     <!-- Image -->
 
-    <span class="label label-sale"><%= link_to "Add to Registry", registry_item_create_path(item_id: item.id, registry_id: current_user.registries.first.id) if current_user && current_user.registries.first %></span>
+    <span class="label label-sale"><%= link_to "Add to Registry", registry_item_add_item_path(item_id: item.id, registry_id: current_user.registries.first.id), :method => :post if current_user && current_user.registries.first %></span>
     
     <!-- Details -->
     <div class="details">

@@ -46,8 +46,8 @@ jQuery.importJS = function(o, t) {
 // =========================================================================
 var path = "uikit/"; // Paths are relative to the page loading this script!
 var scripts = [
-  "js/uikit-utils.js",
-  "js/jquery.bxslider-rahisified.js",
+  // "js/uikit-utils.js",
+  // "js/jquery.bxslider-rahisified.js",
   "js/jquery-ui.min.js",
   "js/highlight.pack.js",
   "bootstrap/js/bootstrap.min.js",
@@ -55,7 +55,7 @@ var scripts = [
   "js/jquery.prettyPhoto.js",
   "js/wow.min.js",
   "js/theme.js",
-  "js/style-switcher.js",
+  // "js/style-switcher.js",
 ];
 
 // IMPORTANT: To force caching change false to true

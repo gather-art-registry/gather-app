@@ -53,7 +53,8 @@ class RegistriesController < ApplicationController
   def remove_item
     @registry = Registry.find(params[:registry_id])
     @user = @registry.user
-    @registry_item = @registry.registry_items.find(item_id: params[:item_id])
+    @registry_item = @registry.registry_items.where(item_id: params[:item_id]).first
+    @registry_item.destroy
     respond_with(@user, @registry)
   end
 

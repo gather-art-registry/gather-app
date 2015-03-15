@@ -1,8 +1,8 @@
 @import url("roboto.css");
 @import url("roboto-cond.css");
 @import url("themify-icons.css");
-@import url("font-awesome.min.css");
-@import url(animate.min.css);
+@import url("font-awesome.css");
+@import url("animate.min.css");
 .font-roboto {
   font-family: "Roboto";
 }

@@ -34,7 +34,7 @@
     <div class="row">
 
       <!-- Main Col -->
-      <div class="main-col col-sm-8 col-md-8">
+      <div class="main-col col-sm-9 col-md-9">
       
         <!-- Categ Slider -->
         <div class="categ-slider bx-pager-bottom-right mgb-20">
@@ -122,9 +122,46 @@
         
         <% @items.each do |item| %>
 
-        <div class="col-sm-4 col-md-3">
+        <div class="col-sm-6 col-md-4">
 
-          <%= render "pages/single_item", item: item %>
+          <!-- product -->
+          <div class="product clearfix">
+          
+            <!-- Image -->
+            <div class="image"> 
+              <%= link_to (image_tag item.image_1.try(:small)), item_path(item.id), class: "main", alt: "" %>
+            </div>
+            <!-- Image -->
+
+            <span class="label label-sale"><%= link_to "Remove from Registry", registry_item_remove_item_path(item_id: item.id, registry_id: @registry.id), :method => :post if current_user && current_user.registries.first %></span>
+            
+            <!-- Details -->
+            <div class="details">
+            
+              <%= link_to item.name, item_path(item.id), class: "title" %>
+              <p>Artist: <%= link_to item.artist.primary_identifier, artist_path(item.artist_id) %></p>
+              
+              
+              <p class="desc"><%= item.description %></p>
+              
+              <!-- Price Box -->
+              <div class="price-box">
+                <span class="price"><%= number_to_currency(item.price) %></span>
+              </div>
+              <!-- /Price Box -->
+              
+              <!-- buttons -->
+              <div class="btn-group">
+                <a class="btn btn-outline btn-base-hover" href="cart.html">add to cart</a>  
+                <a class="btn btn-outline btn-default-hover" href="product.html"><i class="icon fa fa-heart"></i></a>
+              </div> 
+              <!-- /buttons -->
+              
+            </div>
+            <!-- /Details -->
+            
+          </div>
+          <!-- /product -->
 
         </div>
 
