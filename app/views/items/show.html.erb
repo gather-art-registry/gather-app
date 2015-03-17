@@ -105,7 +105,7 @@
             <!-- Collapse -->
             <div id="collapseOne" class="panel-collapse collapse in">
               <div class="panel-body">
-              <p><strong>Medium:</strong> <%= @item.media.map(&:name) %></p>
+              <p><strong>Medium:</strong> <%= @item.media.map(&:name).join(", ") %></p>
               <p><%= @item.description %></p>
               </div>
             </div>

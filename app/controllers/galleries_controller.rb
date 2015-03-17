@@ -14,7 +14,8 @@ class GalleriesController < ApplicationController
   end
 
   def show
-    @items = Item.all
+    @category = Category.where(name: @gallery.name).first
+    @items = ItemCategory.where(category_id: @category.id).each {|item_category| item_category.item }
     respond_with(@gallery)
   end
 

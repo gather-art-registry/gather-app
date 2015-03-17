@@ -111,7 +111,7 @@
               <!-- Details -->
               <div class="details">
               
-                <a class="title" href="product.html"><%= artist.primary_identifier %></a>
+                <%= link_to artist.primary_identifier, artist_path(artist.id), class: "title" %>
                 
                 <p class="desc"><%= artist.artist_statement %></p>
                 
@@ -156,7 +156,7 @@
       </div>
       <!-- /Main Col -->
       
-      <%= render "side_bar" %>
+      <%= render "pages/side_bar" %>
 
     </div>
     <!-- /Row -->

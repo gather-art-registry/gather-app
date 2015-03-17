@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:name, :artist_id, :description, :price, :item_availability_id, 
         :quantity, :special_order, :turn_around_time, :production_category_id, :delivery_timing_id, 
-        :shipping_instruction_id, :notes, :image_1, :image_2, :image_3, :image_4, :medium_ids, 
-        :category_ids, item_media_attributes: [:medium_ids], item_categories_attributes: [:category_ids])
+        :shipping_instruction_id, :notes, :image_1, :image_2, :image_3, :image_4, {:medium_ids => []}, 
+        {:category_ids=> []})
     end
 end

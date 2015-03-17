@@ -7,11 +7,11 @@ class Item < ActiveRecord::Base
 
   has_many :item_media
   has_many :media, through: :item_media
-  accepts_nested_attributes_for :item_media, :allow_destroy => true
+  # accepts_nested_attributes_for :item_media, :allow_destroy => true
 
   has_many :item_categories
   has_many :categories, through: :item_categories
-  accepts_nested_attributes_for :item_categories, :allow_destroy => true
+  # accepts_nested_attributes_for :item_categories, :allow_destroy => true
 
   has_many :gallery_items
   has_many :galleries, through: :gallery_items

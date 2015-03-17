@@ -94,7 +94,7 @@
 
         <div class="col-sm-6 col-md-4">
 
-        <%= render "pages/single_item", item: item %>    
+        <%= render "pages/single_item", item: item.item %>    
 
         </div>
             
@@ -117,74 +117,8 @@
       
     </div>
     <!-- /Main Col -->
-    
-    <!-- Side Col -->
-    <div class="side-col col-sm-3 col-md-3">
 
-      <!-- Side Widget -->
-      <div class="side-widget no-margin-l">
-      
-        <h5 class="boxed-title">sub categories</h5>
-        
-        <!-- ul-toggle -->
-        <ul class="ul-toggle font-size-sm">
-          <li><a href="#"><i class="icon fa fa-angle-right"></i>Handbags</a><i class="toggler ti ti-plus"></i>
-            <ul>
-              <li><a href="#"><i class="icon fa fa-angle-right"></i>Dresses</a></li>
-              <li><a href="#"><i class="icon fa fa-angle-right"></i>Shoes</a></li>
-              <li><a href="#"><i class="icon fa fa-angle-right"></i>Sun Glasses</a></li>
-            </ul>
-          </li>
-          <li><a href="#"><i class="icon fa fa-angle-right"></i>Shoes</a><i class="toggler ti ti-plus"></i>
-            <ul>
-              <li><a href="#"><i class="icon fa fa-angle-right"></i>Dresses</a></li>
-              <li><a href="#"><i class="icon fa fa-angle-right"></i>Shoes</a></li>
-              <li><a href="#"><i class="icon fa fa-angle-right"></i>Sun Glasses</a></li>
-            </ul>
-          </li>
-          <li><a href="#"><i class="icon fa fa-angle-right"></i>Dresses</a><i class="toggler ti ti-plus"></i>
-            <ul>
-              <li><a href="#"><i class="icon fa fa-angle-right"></i>Dresses</a></li>
-              <li><a href="#"><i class="icon fa fa-angle-right"></i>Shoes</a></li>
-              <li><a href="#"><i class="icon fa fa-angle-right"></i>Sun Glasses</a></li>
-            </ul>
-          </li>
-          <li><a href="#"><i class="icon fa fa-angle-right"></i>Sun Glasses</a></li>
-          <li><a href="#"><i class="icon fa fa-angle-right"></i>Hair Products</a></li>
-        </ul>
-        <!-- /ul-toggle -->
-  
-      </div>
-      <!-- /Side Widget -->
-      
-
-      
-      <!-- Side Widget -->
-      <div class="side-widget no-margin-l">
-      
-        <h5 class="boxed-title">price filter</h5>
-        
-        <!-- Price Range Form -->
-        <form class="side-form-panel">
-          <label>Min Price</label>
-          <div class="form-group slider-group">
-            <div class="slider-ctrl" data-call="jui-slider" data-target="#min1" data-options="{min:0, max:1000, value:500}"></div>
-            <input id="min1" class="form-control" value="500" type="text">
-          </div>              
-          <label>Max Price</label>
-          <div class="form-group slider-group">
-            <div class="slider-ctrl" data-call="jui-slider" data-target="#max1" data-options="{min:0, max:1000, value:500}"></div>
-            <input id="max1" class="form-control" value="500" type="text">
-          </div>  
-          <button class="btn btn-outline btn-block">submit</button>
-        </form>
-        <!-- /Price Range Form -->
-      
-      </div>
-      <!-- /Side Widget -->
-
-    </div>
-    <!-- /Side Col -->
+    <%= render "pages/side_bar" %>
 
   </div>
   <!-- /Row -->
@@ -196,38 +130,3 @@
 <!-- /Content Block
 ============================================-->
 
-<!-- Info Block
-============================================ -->
-<div class="info-block page-bg overlay-dark boxed-section">
-
-<!-- Container -->
-<div class="container">
-
-  <!-- Row -->
-  <div class="row">
-    <!-- Col -->
-    <div class="col-md-3 hidden-xs hidden-sm">
-      <span class="text case-u"><i class="ti ti-comments icon-left"></i>live chat</span>
-    </div>
-    <!-- Col -->
-    
-    <!-- Col -->
-    <div class="col-md-6">
-      <span class="text case-u align-center">enjoy free <a href="#">delivery</a> for any <a href="#">orders</a> within the city</span>
-    </div>
-    <!-- Col -->
-    
-    <!-- Col -->
-    <div class="col-md-3 hidden-xs hidden-sm">
-      <span class="text case-u pull-right"><i class="ti-headphone-alt icon-left"></i><b class="visible-lg-inline">support : </b>+(254) 560 400 333</span>
-    </div>
-    <!-- /Col -->
-    
-  </div>
-  <!-- /Row -->
-</div>
-<!-- /Container -->
-
-</div>
-<!-- /Info Block
-=================================================== -->

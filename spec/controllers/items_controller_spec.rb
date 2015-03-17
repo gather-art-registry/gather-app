@@ -2,12 +2,16 @@ require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
 
+  before(:each) do
+    @artist = FactoryGirl.create(:artist)
+  end
+
   let(:valid_attributes) {
-    FactoryGirl.attributes_for(:item)
+    FactoryGirl.attributes_for(:item, artist_id: @artist.id)
   }
 
   let(:invalid_attributes) {
-    FactoryGirl.attributes_for(:item, name: nil)
+    FactoryGirl.attributes_for(:item, name: nil, artist_id: @artist.id)
   }
 
   let(:valid_session) { {} }

@@ -59,7 +59,7 @@
           <%= image_tag @artist.image, size: "250x250", class: "img-circle pull-right" %>
           <%= @artist.artist_statement %>
         </p>
-        <p><strong>Media:</strong> <%= @artist.media.map(&:name) %></p>
+        <p><strong>Media:</strong> <%= @artist.media.map(&:name).join(", ") %></p>
         
        <!-- Nested Row -->
         <div class="row">
