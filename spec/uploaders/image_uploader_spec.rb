@@ -5,37 +5,43 @@ describe ImageUploader do
   include CarrierWave::Test::Matchers
 
   def cache_dir
-    "#{Rails.root}/tmp/uploads/#{Rails.env}/images"
+    "#{Rails.root}/public/uploads/tmp/"
   end
 
   def store_dir
-    "system/attachments/#{Rails.env}/images/#{model.id}/"
+    "#{Rails.root}/public/uploads/#{model}/#{model.id}/"
   end
 
   before do
-    MyUploader.enable_processing = true
-    @uploader = MyUploader.new(@registry, :image)
+    ImageUploader.enable_processing = true
+    @uploader = ImageUploader.new(@registry, :image_1)
     @uploader.store!(File.open(path_to_file))
   end
 
   after do
-    MyUploader.enable_processing = false
+    ImageUploader.enable_processing = false
     @uploader.remove!
   end
 
-  context 'the thumb version' do
-    it "should scale down a landscape image to be exactly 64 by 64 pixels" do
-      @uploader.thumb.should have_dimensions(64, 64)
+  describe 'the thumb version' do
+    it "scales down a landscape image to be exactly 200 by 200 pixels" do
+      expect(@uploader.thumb).to have_dimensions(200, 200)
     end
   end
 
-  context 'the small version' do
-    it "should scale down a landscape image to fit within 200 by 200 pixels" do
-      @uploader.small.should be_no_larger_than(200, 200)
+  describe 'the small version' do
+    it "scales down a landscape image to fit within 350 by 350 pixels" do
+      expect(@uploader.small).to have_dimensions(350, 350)
     end
   end
 
-  it "should make the image readable only to the owner and not executable" do
-    @uploader.should have_permissions(0600)
+  describe 'the full_size version' do
+    it "scales down a landscape image to fit within 600 by 600 pixels" do
+      expect(@uploader.full_size).to have_dimensions(600, 600)
+    end
   end
+
+  # it "should make the image readable only to the owner and not executable" do
+  #   @uploader.should have_permissions(0600)
+  # end
 end

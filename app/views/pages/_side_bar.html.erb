@@ -23,7 +23,7 @@
     
     <ul class="vlinks vlinks-iconed vlinks-ruled-dots vlinks-lg">
       <% Item.take(3).each do |item| %>
-        <li><%= image_tag item.image_2.thumb, class: "img" %><%= link_to item.name, item_path(item.id) %><span class="meta"><i class="icon-left fa fa-comments"></i>Date added: <%= item.created_at %></span></li>
+        <li><%= image_tag item.image_2.thumb, class: "img" %><%= link_to item.name, item_path(item.id) %><span class="meta"><i class="icon-left fa fa-calendar"></i><%= item.created_at.to_formatted_s(:long) %></span></li>
       <% end %>
     </ul>
     

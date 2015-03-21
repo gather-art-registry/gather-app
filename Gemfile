@@ -14,7 +14,8 @@ gem "rmagick"
 gem "carrierwave"
 gem "fog"
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem "awesome_print", require:"ap"
+
 # gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
@@ -28,13 +29,17 @@ group :test, :development do
   gem "selenium-webdriver"
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'pry-rails'
   gem "terminal-notifier-guard"
   gem "factory_girl_rails"
-  gem "simplecov"
+  gem "simplecov", :require => false
   gem "database_cleaner"
   gem "guard", ">=2.1.0"
   gem "guard-rspec"
   gem "faker"
+  gem 'meta_request'
+  gem "bullet"
+  gem 'quiet_assets'
 end
 
 ruby '2.2.0'

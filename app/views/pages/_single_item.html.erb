@@ -5,9 +5,11 @@
     <div class="image"> 
       <%= link_to (image_tag item.image_1.try(:small)), item_path(item.id), class: "main", alt: "" %>
     </div>
-    <!-- Image -->
-
-    <span class="label label-sale"><%= link_to "Add to Registry", registry_item_add_item_path(item_id: item.id, registry_id: current_user.registries.first.id), :method => :post if current_user && current_user.registries.first %></span>
+    
+    <!-- Add to Registry Tab -->
+    <% if current_user && current_user.registries.first %>
+      <span class="label label-sale"><%= link_to "Add to Registry", registry_item_add_item_path(item_id: item.id, registry_id: current_user.registries.first.id), :method => :post %></span>
+    <% end %>
     
     <!-- Details -->
     <div class="details">
